@@ -21,7 +21,7 @@ Meteor.methods({
       var email = Meteor.user().services.facebook.email;
       Meteor.users.update(user, {
         $set:{
-          'profile.name':null,
+          /*'profile.name':null,
           'profile.picture':null,
           'telescope.displayName':null,
           'telescope.birthday':null,
@@ -30,15 +30,16 @@ Meteor.methods({
           'services.facebook.name':null,
           'services.facebook.first_name':null,
           'services.facebook.last_name':null,
-          'services.facebook.link':null,
+          'services.facebook.link':null,*/
+          'profile.anonymous': true
 
         }
       });
-      Meteor.users.update(user, {
+      /*Meteor.users.update(user, {
         $set:{
           'telescope.email': email
         }
-      });
+      });*/
 
 
     },
@@ -48,12 +49,12 @@ Meteor.methods({
       var email = Meteor.user().services.facebook.email;
       Meteor.users.update(user, {
         $set:{
-          'telescope.email': email
+          'profile.anonymous': false
         }
       });
     }
 });
 // testing purpose;
-/*Meteor.publish("allUsers", function () {
+Meteor.publish("allUsers", function () {
    return Meteor.users.find();
- });*/
+ });
