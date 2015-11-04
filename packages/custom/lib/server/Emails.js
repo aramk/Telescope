@@ -5,6 +5,7 @@ var LETTER_START = 'A';
 
 var fs = Npm.require('fs');
 var path = Npm.require('path');
+var url = Npm.require('url');
 var assetsPath = path.join(process.cwd(), 'assets/packages/my-custom-package');
 
 var notificationEmailTemplate = fs.readFileSync(path.join(assetsPath,
@@ -56,5 +57,8 @@ Emails = {
 
 // Send an email notification to admins when new posts are created.
 Posts.after.insert(function(userId, doc) {
-  Posts.sendNotificationEmail(doc._id);
+  // Deferred to prevent blocking on the client's request.
+  _.defer(Meteor.bindEnvironment(function() {
+    Posts.sendNotificationEmail(doc._id);
+  }));
 });
