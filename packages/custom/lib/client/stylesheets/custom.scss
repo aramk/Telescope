@@ -368,7 +368,7 @@ header
     display: none;
 }
 .posts-list .post-discuss2 {
-    // display: none;
+    display: none;
 }
 .posts-list .post-meta {
     height: 50px;
@@ -558,5 +558,7 @@ header
     border-right:none;
 }
 .post-meta-item {}
-.post-context {display:none;}
+.post-contextinner {
+    padding-left: 77px;
+}
 .post-discuss2 .action {float:right;}
