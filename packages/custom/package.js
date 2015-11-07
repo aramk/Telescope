@@ -8,7 +8,12 @@ Package.onUse(function (api) {
 
   // ---------------------------------- 1. Core dependency -----------------------------------
 
-  api.use("telescope:core");
+  api.use([
+    'underscore',
+    'telescope:core@0.20.4',
+    'matb33:collection-hooks@0.8.0',
+    'momentjs:moment@2.10.3'
+  ], ['client', 'server']);
 
   // ---------------------------------- 2. Files to include ----------------------------------
 
@@ -49,13 +54,19 @@ Package.onUse(function (api) {
     'lib/client/privacy.js',
     'lib/client/templates/trending_posts.html',
     'lib/client/templates/trending_posts.js'
-  ], ['client']);
+  ], 'client');
 
   // server
 
   api.addFiles([
+    'lib/server/Emails.js',
+    'lib/server/emails/postNotificationEmail.html',
     'lib/server/templates/custom_emailPostItem.handlebars'
-  ], ['server']);
+  ], 'server');
+
+  api.export([
+    'Emails'
+  ], 'server');
 
   // i18n languages (must come last)
 
@@ -63,4 +74,21 @@ Package.onUse(function (api) {
     'i18n/en.i18n.json'
   ], ['client', 'server']);
 
+});
+
+Package.onTest(function(api) {
+  api.use([
+    'coffeescript',
+    'tinytest',
+    'test-helpers',
+    'practicalmeteor:munit',
+
+    'momentjs:moment',
+    'telescope:core',
+    'my-custom-package'
+  ], 'server');
+  api.addFiles([
+    'tests/shims.coffee',
+    'tests/EmailsSpec.coffee'
+  ], 'server');
 });
