@@ -233,7 +233,7 @@ header
 		  //   -webkit-transform:translate(0, -2px);
 	    // }
     }
-    .posts-grid .post-upvote2 {
+    .posts-list .post-upvote2 {
 	    &:before {
 		    content:"";
 		    position:relative;
@@ -364,7 +364,7 @@ header
         border-bottom: 0px;
     }
 }
-.posts-list .post-upvote2 {
+.posts-grid .post-upvote2 {
     display: none;
 }
 .posts-list .post-discuss2 {
@@ -557,7 +557,15 @@ header
     border-top: none;
     border-right:none;
 }
-.post-meta-item {}
+.posts-grid .post-meta-item {
+    display: none;
+}
+.post-meta-item a {  
+    color:#a4a9ab!important;
+}
+.post-meta-item {  
+    color:#a4a9ab!important;
+}
 .post-contextinner {
     padding-left: 77px;
 }

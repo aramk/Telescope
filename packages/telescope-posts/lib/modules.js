@@ -46,18 +46,33 @@ Telescope.modules.add("postContext", [
   },
 ]);
 
+Telescope.modules.add("postEdit", [
+  {
+      template: 'post_info',
+      order: 20
+  },
+  {
+      template: 'post_upvote',
+      order: 10
+  },
+  {
+      template: 'post_admin',
+      order: 30
+  },
+]);
+
 Telescope.modules.add("postMeta", [
   {
-    template: 'post_author',
-    order: 40
+      template: 'post_author',
+      order: 40
   },
   {
-    template: 'post_info',
-    order: 30
+      template: 'post_info',
+      order: 30
   },
   {
-    template: 'post_admin',
-    order: 50
+      template: 'post_admin',
+      order: 50
   },
   {
     template: 'post_upvote',
