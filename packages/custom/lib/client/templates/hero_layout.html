@@ -29,11 +29,12 @@
       {{/if}}
 
       <div class="content-wrapper">
+        {{> modules "trending_posts"}}
+        {{> footer}}
         {{> messages}}
         {{> yield "adminMenu"}}
         {{> yield "postListTop"}}
         {{> yield}}
-        {{> footer}}
       </div>
       <div class="overlay hidden"></div>
     </div>

@@ -1,8 +1,13 @@
+@import "./layout";
 @import "./mixins";
 
 $header-height: 60px;
 
 .top-nav .header {
+  .header-inner {
+    max-width: $max-screen-width;
+    margin: 0 auto;
+  }
   background: black !important;
   .logo {
     background-image: url('/textie_logo_transbg.png');

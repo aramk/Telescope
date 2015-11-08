@@ -51,6 +51,7 @@ Package.onUse(function (api) {
     'lib/client/templates/privacy_policy.js',
     'lib/client/templates/modals/submit_message_modal.html',
     'lib/client/templates/modals/submit_message_modal.js',
+    'lib/client/templates/textie_footer.html',
     'lib/client/templates/textie_nav.html',
     'lib/client/templates/textie_user_menu.html',
     'lib/client/templates/trending_posts.html',

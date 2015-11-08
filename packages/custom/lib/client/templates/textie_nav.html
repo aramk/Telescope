@@ -1,23 +1,23 @@
 <template name="textie_nav">
   <header class="header {{headerClass}}">
+    <div class="header-inner">
+      <a href="/">
+        <div class="logo"></div>
+      </a>
 
-    <a href="/">
-      <div class="logo"></div>
-    </a>
+      <div class="subtitle">crowdsource awesome replies</div>
 
-    <div class="subtitle">crowdsource awesome replies</div>
+      {{#if hasPrimaryNav}}
+        <div class="nav primary-nav desktop-nav header-module desktop-only">
+          {{> modules "primaryNav"}}
+        </div>
+      {{/if}}
 
-    {{#if hasPrimaryNav}}
-      <div class="nav primary-nav desktop-nav header-module desktop-only">
-        {{> modules "primaryNav"}}
-      </div>
-    {{/if}}
-
-    {{#if hasSecondaryNav}}
-      <div class="nav secondary-nav desktop-nav header-module desktop-only">
-        {{> modules "secondaryNav"}}
-      </div>
-    {{/if}}
-
+      {{#if hasSecondaryNav}}
+        <div class="nav secondary-nav desktop-nav header-module desktop-only">
+          {{> modules "secondaryNav"}}
+        </div>
+      {{/if}}
+    </div>
   </header>
 </template>
