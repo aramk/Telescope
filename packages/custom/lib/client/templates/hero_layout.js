@@ -22,3 +22,8 @@ Meteor.startup(function() {
   });
 });
 
+Template.layout.helpers({
+  showHero: function() {
+    return Iron.Location.get().path === '/';
+  }
+});

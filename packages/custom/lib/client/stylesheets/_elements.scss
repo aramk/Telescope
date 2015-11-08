@@ -10,15 +10,10 @@ a.btn {
   color: white;
 }
 
-@mixin purple-button {
-  background-color: #b55579;
-  background-image: linear-gradient(#96395d, #c06488);
-}
-
-@mixin basic-button {
-  background: none;
-}
-
-@mixin rounded-button {
-  border-radius: 15px;
+.btn.btn-button {
+  border-radius: 3rem;
+  padding: 0.5rem 2rem;
+  &.basic {
+    background: none;
+  }
 }

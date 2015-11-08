@@ -60,9 +60,6 @@ Package.onUse(function (api) {
     // 'lib/client/templates/custom_post_title.html',
     // 'lib/client/templates/custom_post_title.js',
 
-    // Assets
-    'assets/images/textie-logo.png',
-
     // Misc
     'lib/client/templates.js',
     'lib/client/privacy.js'
