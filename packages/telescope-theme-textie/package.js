@@ -33,6 +33,11 @@ Package.onUse(function (api) {
       // screen
       'lib/client/scss/screen.scss',
 
+      // custom
+      'lib/client/scss/modules/textie/_elements.scss',
+      'lib/client/scss/modules/textie/_mixins.scss',
+      'lib/client/scss/modules/textie/_nav.scss',
+
       // templates
       'lib/client/templates/textie_nav.html',
       'lib/client/templates/textie_user_menu.html',

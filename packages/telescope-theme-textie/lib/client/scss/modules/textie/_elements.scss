@@ -4,7 +4,7 @@ a.btn {
   &, &:link, &:visited {
     font-weight: normal;
   }
-  &, &:hover, &:active, &:visited {
+  &, &:hover, a:focus, &:active, &:visited {
     color: white;
   }
   color: white;
