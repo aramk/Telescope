@@ -35,25 +35,37 @@ Package.onUse(function (api) {
   // client
 
   api.addFiles([
-    // 'lib/client/templates/hello.html',
-    // 'lib/client/templates/hello.js',
-    // 'lib/client/templates/custom_post_title.html',
-    // 'lib/client/templates/custom_post_title.js',
+    // Stylesheets
+    'lib/client/stylesheets/custom.scss',
+    'lib/client/stylesheets/hero.scss',
+    'lib/client/stylesheets/_elements.scss',
+    'lib/client/stylesheets/_mixins.scss',
+    'lib/client/stylesheets/_nav.scss',
+
+    // Templates
     'lib/client/templates/hero_layout.html',
     'lib/client/templates/hero_layout.js',
-    // 'lib/client/hero_layout.js',
-    'lib/client/hero.scss',
-    'lib/client/stylesheets/custom.scss',
-    'lib/client/custom_templates.js',
     'lib/client/templates/post_context.html',
     'lib/client/templates/post_context.js',
     'lib/client/templates/privacy_policy.html',
     'lib/client/templates/privacy_policy.js',
     'lib/client/templates/modals/submit_message_modal.html',
     'lib/client/templates/modals/submit_message_modal.js',
-    'lib/client/privacy.js',
+    'lib/client/templates/textie_nav.html',
+    'lib/client/templates/textie_user_menu.html',
     'lib/client/templates/trending_posts.html',
-    'lib/client/templates/trending_posts.js'
+    'lib/client/templates/trending_posts.js',
+    // 'lib/client/templates/hello.html',
+    // 'lib/client/templates/hello.js',
+    // 'lib/client/templates/custom_post_title.html',
+    // 'lib/client/templates/custom_post_title.js',
+
+    // Assets
+    'assets/images/textie-logo.png',
+
+    // Misc
+    'lib/client/templates.js',
+    'lib/client/privacy.js'
   ], 'client');
 
   // server

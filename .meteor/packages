@@ -33,12 +33,11 @@ telescope:singleday
 telescope:subscribe-to-posts # notifications
 telescope:tagline-banner
 telescope:theme-base
-# telescope:theme-hubble
+telescope:theme-hubble
 telescope:update-prompt
 
 ############ Your Custom Packages ############
 
-telescope:theme-textie
 my-custom-package
 peppelg:bootstrap-3-modal
 twbs:bootstrap
