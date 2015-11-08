@@ -1,0 +1,50 @@
+@import "./mixins";
+
+$header-height: 60px;
+
+.top-nav .header {
+  background: black !important;
+  .logo {
+    background-image: url('/packages/telescope_theme-textie/assets/images/textie-logo.png');
+    background-size: contain;
+    height: 50px;
+    width: 140px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    position: relative;
+    display: inline-block;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+    -webkit-transform: none;
+  }
+  .subtitle {
+    display: inline-block;
+    line-height: $header-height;
+    vertical-align: bottom;
+    color: white;
+    font-size: 18px;
+  }
+  .search {
+    display: none;
+  }
+  .secondary-nav {
+    display: inline-block;
+    float: right;
+    top: auto;
+    line-height: $header-height;
+    transform: none;
+    -webkit-transform: none;
+  }
+  .btn-button {
+    @include rounded-button;
+  }
+  .sign-in.btn-button {
+    @include purple-button;
+  }
+  .sign-up.btn-button {
+    @include basic-button;
+  }
+}
