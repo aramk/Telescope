@@ -13,7 +13,7 @@ $header-height: 60px;
   left: 0;
   width: 100%;
   .header-inner {
-    max-width: $max-screen-width;
+    max-width: $device-width-max;
     margin: 0 auto;
   }
   background: black !important;
@@ -27,7 +27,7 @@ $header-height: 60px;
     display: inline-block;
     left: auto;
     right: auto;
-    top: auto;
+    top: 4px;
     transform: none;
     -webkit-transform: none;
   }
@@ -54,5 +54,29 @@ $header-height: 60px;
   }
   a:hover, a:focus {
     text-decoration: none;
+  }
+}
+
+// Not using mobile nav menu.
+.mobile-nav {
+  display: none;
+}
+
+@include device-width-below(640px) {
+  .top-nav .header {
+    .subtitle {
+      display: none;
+    }
+  }
+}
+
+@include device-width-below(400px) {
+  .top-nav .header {
+    .logo {
+      width: 100px;
+    }
+    .btn-button {
+      padding: 0.5rem 1rem;
+    }
   }
 }

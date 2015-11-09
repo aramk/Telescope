@@ -17,10 +17,12 @@
               <h2>Here's how Textie works</h2>
               <ol>
                 <li>Post a text you've received</li>
-                <li>Responses are suggested by people like you</li>
-                <li>Responses are voted up, the best float to the top</li>
+                <li class="desktop-only">Responses are suggested by people like you</li>
+                <li class="desktop-only">Responses are voted up, the best float to the top</li>
+                <li class="mobile-only">Responses are suggested</li>
+                <li class="mobile-only">Responses are voted up</li>
               </ol>
-              {{> postButton}}
+              <div>{{> postButton}}</div>
             </div>
           </div>
         </section>

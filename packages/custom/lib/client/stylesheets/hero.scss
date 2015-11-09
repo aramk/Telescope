@@ -20,7 +20,7 @@ body {
         display: block;
         overflow-x: none;
 
-        max-width: $max-screen-width;
+        max-width: $device-width-max;
         margin: 0 auto;
         margin-top: -10px;
     }
@@ -255,6 +255,44 @@ $switch-bg: #2da86c;
             &.tgl_bgd-on {
                 right: auto;
                 left: -10px;
+            }
+        }
+    }
+}
+
+@include small-device {
+    .hero {
+        .hero-inner {
+            text-align: center;
+            min-height: 0;
+            .copy {
+                margin: 1rem auto;
+                padding: 1rem;
+                float: none;
+                h2 {
+                    margin: 1rem;
+                    margin-bottom: 2rem;
+                }
+                ol {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+@include device-width-below(400px) {
+    .hero {
+        .hero-inner {
+            .copy {
+                h2 {
+                    font-size: 25px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                ol {
+                    margin-bottom: 1rem;
+                }
             }
         }
     }

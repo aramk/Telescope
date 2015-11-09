@@ -545,12 +545,12 @@ header
 
 .post-sharelinks {
   text-align: center;
-	    @include small{
-            display: block;
-	    }
-	    @include medium-large{
-            margin-left: 10px;
-        }
+  @include small {
+    display: block;
+  }
+  @include medium-large {
+    margin-left: 10px;
+  }
 
 }
 .avatar {
