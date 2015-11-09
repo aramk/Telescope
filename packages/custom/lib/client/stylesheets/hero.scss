@@ -10,7 +10,7 @@ body {
 
     .hero-inner {
         position: relative;
-        min-height: 400px;
+        height: 380px;
         background-image: url('/textie_bg_hero.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -264,17 +264,22 @@ $switch-bg: #2da86c;
     .hero {
         .hero-inner {
             text-align: center;
-            min-height: 0;
+            height: auto;
             .copy {
-                margin: 1rem auto;
                 padding: 1rem;
+                padding-bottom: 1.5rem;
                 float: none;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 0;
                 h2 {
                     margin: 1rem;
                     margin-bottom: 2rem;
                 }
                 ol {
                     display: inline-block;
+                    margin-bottom: 0.5rem;
                 }
             }
         }
@@ -292,8 +297,28 @@ $switch-bg: #2da86c;
                 }
                 ol {
                     margin-bottom: 1rem;
+                    li {
+                        padding-left: 6rem;
+                    }
                 }
             }
+        }
+    }
+}
+
+@include device-width-below(950px) {
+    .hero .hero-inner {
+        background-image: url('/textie_bg_hero_950x380.jpg');
+    }
+}
+
+@include device-width-below(600px) {
+    .hero {
+        .hero-inner {
+            background-image: url('/textie_bg_hero_600x260.jpg');
+        }
+        .copy ol li {
+            padding-left: 8rem;
         }
     }
 }

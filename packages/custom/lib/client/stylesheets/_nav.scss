@@ -12,10 +12,10 @@ $header-height: 60px;
   top: 0;
   left: 0;
   width: 100%;
-  .header-inner {
-    max-width: $device-width-max;
-    margin: 0 auto;
-  }
+  // .header-inner {
+  //   max-width: $device-width-max;
+  //   margin: 0 auto;
+  // }
   background: black !important;
   .logo-link {
     display: inline-block;
@@ -69,7 +69,30 @@ $header-height: 60px;
 @include device-width-below(640px) {
   .top-nav .header {
     .subtitle {
-      display: none;
+      display: inline-block;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      position: absolute;
+      right: 1rem;
+      bottom: 0.2rem;
+    }
+    .secondary-nav {
+      top: 1rem;
+      line-height: 1.5;
+    }
+    .btn.btn-button {
+      padding: 0.2rem 1.5rem;
+    }
+  }
+}
+
+@include device-width-below(350px) {
+  .top-nav .header {
+    .subtitle {
+      font-size: 1.25rem;
+    }
+    .sign-in.btn-button {
+      margin-right: 0;
     }
   }
 }
