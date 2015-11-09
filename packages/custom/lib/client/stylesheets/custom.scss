@@ -579,3 +579,13 @@ header
 .posts-grid .post-rank {
     display: none;
 }
+
+.posts-grid .post-info {
+  padding: 0;
+}
+
+@include device-small {
+  .posts-grid .post {
+    margin-bottom: 0;
+  }
+}

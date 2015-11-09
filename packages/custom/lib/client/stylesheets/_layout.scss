@@ -15,7 +15,7 @@ $device-width-max: 1200px;
   }
 }
 
-@mixin small-device {
+@mixin device-small {
   @include device-width-below($device-width-small) {
     @content;
   };
@@ -27,7 +27,7 @@ $device-width-max: 1200px;
   display: none !important;
 }
 
-@include small-device {
+@include device-small {
   .desktop-only {
     display: none !important;
   }
@@ -128,7 +128,7 @@ $social-media-button-height: 60px;
   }
 }
 
-@include small-device {
+@include device-small {
   .footer {
     .links {
       a.desktop-only-after {

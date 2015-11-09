@@ -260,7 +260,7 @@ $switch-bg: #2da86c;
     }
 }
 
-@include small-device {
+@include device-small {
     .hero {
         .hero-inner {
             text-align: center;

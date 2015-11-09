@@ -12,10 +12,6 @@ $header-height: 60px;
   top: 0;
   left: 0;
   width: 100%;
-  // .header-inner {
-  //   max-width: $device-width-max;
-  //   margin: 0 auto;
-  // }
   background: black !important;
   .logo-link {
     display: inline-block;
@@ -91,19 +87,24 @@ $header-height: 60px;
     .subtitle {
       font-size: 1.25rem;
     }
-    .sign-in.btn-button {
-      margin-right: 0;
-    }
   }
 }
 
 @include device-width-below(400px) {
   .top-nav .header {
+    padding: 0 1rem;
     .logo {
       width: 100px;
     }
     .btn-button {
       padding: 0.5rem 1rem;
+    }
+    .sign-in.btn-button {
+      margin-right: 0;
+    }
+    .sign-up.btn-button {
+      padding-left: 0.5rem;
+      padding-right: 0;
     }
   }
 }
