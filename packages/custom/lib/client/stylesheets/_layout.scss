@@ -38,14 +38,18 @@ $max-screen-width: 1200px;
     vertical-align: top;
     height: 60px;
     a {
-      margin-left: 1rem;
+      padding: 0 1rem;
+      margin-right: 1rem;
+      position: relative;
       text-decoration: none !important;
       &:after {
         content: '\2022';
-        margin-left: 1.5rem;
+        position: absolute;
+        top: -0.1rem;
+        right: -1rem;
       }
       &:last-child {
-        margin-right: 1rem;
+        margin-right: 0rem;
         &:after {
           display: none;
         }

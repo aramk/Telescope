@@ -48,6 +48,9 @@ Package.onUse(function (api) {
     'lib/client/templates/hero_layout.js',
     'lib/client/templates/post_context.html',
     'lib/client/templates/post_context.js',
+    'lib/client/templates/postButton.html',
+    'lib/client/templates/postButton.js',
+    'lib/client/templates/postCallToAction.html',
     'lib/client/templates/privacy_policy.html',
     'lib/client/templates/privacy_policy.js',
     'lib/client/templates/modals/submit_message_modal.html',
@@ -63,8 +66,9 @@ Package.onUse(function (api) {
     // 'lib/client/templates/custom_post_title.js',
 
     // Misc
-    'lib/client/templates.js',
-    'lib/client/privacy.js'
+    'lib/client/routes.js',
+    'lib/client/subscriptions.js',
+    'lib/client/templates.js'
   ], 'client');
 
   // server

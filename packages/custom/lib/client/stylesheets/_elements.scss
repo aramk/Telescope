@@ -17,3 +17,16 @@ a.btn {
     background: none;
   }
 }
+
+.post-button.btn-button {
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
+  @include green-button;
+}
+
+.post-call-to-action {
+  h3 {
+    margin-bottom: 2rem;
+  }
+  text-align: center;
+}

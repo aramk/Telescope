@@ -1,7 +1,7 @@
 <template name="trending_posts">
   {{#if hasPosts}}
     <div class="content-wrapper posts-wrapper grid grid-module trending-posts">
-      <h3> Trending Messages </h3>
+      <h3>Trending Messages</h3>
       {{ #each posts }}
           {{> modules "postThumbnail"}}
           <div class="post-info">

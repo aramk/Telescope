@@ -20,9 +20,7 @@
                 <li>Responses are suggested by people like you</li>
                 <li>Responses are voted up, the best float to the top</li>
               </ol>
-              <a id="submit_message_modal" class="btn post-button btn-button">
-                Post a Text
-              </a>
+              {{> postButton}}
             </div>
           </div>
         </section>
@@ -32,6 +30,7 @@
         {{#if isHomepage}}
           {{> modules "trending_posts"}}
           {{> footer}}
+          {{> postCallToAction}}
         {{/if}}
         {{> messages}}
         {{> yield "adminMenu"}}
