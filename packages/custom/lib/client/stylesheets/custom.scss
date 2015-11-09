@@ -191,6 +191,7 @@ header
 
 .post-heading {
 	padding:7px 7px;
+  position: relative;
 	color:white;
 	background:#0B93F6;
 	border-radius:8px;
@@ -207,8 +208,8 @@ header
       border-right: 14px solid #0B93F6;
       border-top: 17px solid transparent;
       position: absolute;
-      top: 35px;
-      left: 50px;
+      top: 4px;
+      left: -13px;
       content: "";
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -543,6 +544,7 @@ header
 }
 
 .post-sharelinks {
+  text-align: center;
 	    @include small{
             display: block;
 	    }

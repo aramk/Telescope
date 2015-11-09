@@ -3,7 +3,15 @@
 
 $header-height: 60px;
 
+.outer-wrapper {
+  margin-top: $header-height;
+}
+
 .top-nav .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   .header-inner {
     max-width: $max-screen-width;
     margin: 0 auto;
