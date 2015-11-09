@@ -17,6 +17,10 @@ $header-height: 60px;
     margin: 0 auto;
   }
   background: black !important;
+  .logo-link {
+    display: inline-block;
+    margin-top: 5px;
+  }
   .logo {
     background-image: url('/textie_logo_transbg.png');
     height: 50px;
@@ -27,7 +31,7 @@ $header-height: 60px;
     display: inline-block;
     left: auto;
     right: auto;
-    top: 4px;
+    top: auto;
     transform: none;
     -webkit-transform: none;
   }
