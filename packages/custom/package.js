@@ -36,11 +36,12 @@ Package.onUse(function (api) {
 
   api.addFiles([
     // Stylesheets
-    'lib/client/stylesheets/custom.scss',
-    'lib/client/stylesheets/hero.scss',
     'lib/client/stylesheets/_elements.scss',
+    'lib/client/stylesheets/_layout.scss',
     'lib/client/stylesheets/_mixins.scss',
     'lib/client/stylesheets/_nav.scss',
+    'lib/client/stylesheets/custom.scss',
+    'lib/client/stylesheets/hero.scss',
 
     // Templates
     'lib/client/templates/hero_layout.html',

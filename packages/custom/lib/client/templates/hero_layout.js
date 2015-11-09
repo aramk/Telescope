@@ -23,7 +23,7 @@ Meteor.startup(function() {
 });
 
 Template.layout.helpers({
-  showHero: function() {
+  isHomepage: function() {
     return Iron.Location.get().path === '/';
   }
 });

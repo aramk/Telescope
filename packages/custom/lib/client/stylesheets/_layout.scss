@@ -1,3 +1,5 @@
+@import './mixins';
+
 $max-screen-width: 1200px;
 
 .trending-posts {
@@ -8,9 +10,50 @@ $max-screen-width: 1200px;
 
 .footer {
   width: 200%;
-  height: 100px;
+  height: 80px;
   background: black;
   color: white;
   margin-left: -50%;
   margin-right: -50%;
+  .social {
+    display: inline-block;
+    margin-right: 3rem;
+    > a {
+      @include image-background-contain;
+      width: 60px;
+      height: 60px;
+      margin: 0 1rem;
+      display: inline-block;
+    }
+    .facebook {
+      background-image: url('/social-fb-logo.png');
+    }
+    .twitter {
+      background-image: url('/social-twitter-logo.png');
+    }
+  }
+  .links {
+    display: inline-block;
+    line-height: 60px;
+    vertical-align: top;
+    height: 60px;
+    a {
+      margin-left: 1rem;
+      text-decoration: none !important;
+      &:after {
+        content: '\2022';
+        margin-left: 1.5rem;
+      }
+      &:last-child {
+        margin-right: 1rem;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  a, a:link, a:visited, a:active {
+    color: white;
+    font-weight: normal;
+  }
 }

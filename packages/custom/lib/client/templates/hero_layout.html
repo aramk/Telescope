@@ -10,13 +10,13 @@
         {{extraCss}}
       </style>
 
-      {{#if showHero}}
+      {{#if isHomepage}}
         <section class="hero">
           <div class="hero-inner">
             <div class="copy">
               <h2>Here's how Textie works</h2>
               <ol>
-                <li>Post a test you've received</li>
+                <li>Post a text you've received</li>
                 <li>Responses are suggested by people like you</li>
                 <li>Responses are voted up, the best float to the top</li>
               </ol>
@@ -29,8 +29,10 @@
       {{/if}}
 
       <div class="content-wrapper">
-        {{> modules "trending_posts"}}
-        {{> footer}}
+        {{#if isHomepage}}
+          {{> modules "trending_posts"}}
+          {{> footer}}
+        {{/if}}
         {{> messages}}
         {{> yield "adminMenu"}}
         {{> yield "postListTop"}}

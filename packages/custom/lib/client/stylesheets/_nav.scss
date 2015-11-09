@@ -11,11 +11,9 @@ $header-height: 60px;
   background: black !important;
   .logo {
     background-image: url('/textie_logo_transbg.png');
-    background-size: contain;
     height: 50px;
     width: 140px;
-    background-position: center center;
-    background-repeat: no-repeat;
+    @include image-background-contain;
     
     position: relative;
     display: inline-block;
@@ -32,7 +30,7 @@ $header-height: 60px;
     color: white;
     font-size: 18px;
   }
-  .search {
+  .search, .pages-menu {
     display: none;
   }
   .secondary-nav {

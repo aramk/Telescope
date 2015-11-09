@@ -24,3 +24,9 @@
   background-color: #73a888;
   background-image: linear-gradient(#5c8a6e, #8ab79c);
 }
+
+@mixin image-background-contain {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
