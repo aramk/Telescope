@@ -1,0 +1,139 @@
+@import './mixins';
+
+$device-width-small: 600px;
+$device-width-max: 1200px;
+
+@mixin device-width-below($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin device-width-above($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin device-small {
+  @include device-width-below($device-width-small) {
+    @content;
+  };
+}
+
+// Show/hide content for desktop/mobile.
+
+.mobile-only {
+  display: none !important;
+}
+
+@include device-small {
+  .desktop-only {
+    display: none !important;
+  }
+  .desktop-only-after:after {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+
+
+
+.trending-posts {
+  h3 {
+    text-align: center;
+  }
+}
+
+$footer-inner-width: 60px;
+$social-media-button-height: 60px;
+
+.footer {
+  background: black;
+  color: white;
+  padding: 10px 0;
+  .social {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    line-height: 0;
+    vertical-align: middle;
+    > a {
+      @include image-background-contain;
+      display: inline-block;
+      width: $social-media-button-height;
+      height: $social-media-button-height;
+      margin: 0;
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .facebook {
+      background-image: url('/social-fb-logo.png');
+    }
+    .twitter {
+      background-image: url('/social-twitter-logo.png');
+    }
+  }
+  .links {
+    display: inline-block;
+    vertical-align: middle;
+    // Adds margin for when links wrap below social buttons.
+    // margin-top: 1rem;
+    a {
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      position: relative;
+      text-decoration: none !important;
+      &:after {
+        content: '\2022';
+        margin-right: -2.5rem;
+        padding-left: 1rem;
+      }
+      &:last-child {
+        margin-right: 0rem;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  a, a:link, a:visited, a:active {
+    color: white;
+    font-weight: normal;
+  }
+}
+
+@include device-width-below(640px) {
+  .footer {
+    .social {
+      margin-right: 1rem;
+      > a {
+        height: $footer-inner-width / 2;
+        width: $footer-inner-width / 2;
+      }
+    }
+  }
+}
+
+@include device-width-below(375px) {
+  .footer {
+    .links {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@include device-small {
+  .footer {
+    .links {
+      a.desktop-only-after {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,45 +1,81 @@
+@import "./layout";
+@import "./mixins";
+
 body {
     overflow-x: hidden;
 }
 
 .hero {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    display: block;
-    overflow-x: none;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .35);
-    margin: -10px 0 40px 0;
+    background: black;
 
     .hero-inner {
-        background: rgba(0, 0, 0, .10);
         position: relative;
-        min-height: 500px;
+        height: 380px;
+        background-image: url('/textie_bg_hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        width: 100%;
+        display: block;
+        overflow-x: none;
+
+        max-width: $device-width-max;
+        margin: 0 auto;
+        margin-top: -10px;
     }
 
     .copy {
-        position: absolute;
-        top: 25%;
-        width: 100%;
-        height: 10em;
-        padding: 0 20px;
+        padding: 2rem 3rem;
         color: #fff;
+        background: rgba(0,0,0,0.4);
+        display: inline-block;
+        float: right;
+        margin-top: 60px;
+        margin-right: 10%;
+        border-radius: 30px;
+        text-align: center;
 
         @media screen and (max-width: 40em) {
             top: 10%;
         }
 
-        h1 {
-            font-size: 4em;
-            line-height: 1;
+        $bullet-left-spacing: 5rem;
+        > h2 {
+            margin: 2rem $bullet-left-spacing;
         }
 
-        h3 {
-            font-size: 2em;
-            font-weight: normal;
+        h1, h2, h3 {
+            text-shadow: black 0.1em 0.1em 0.2em;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        ol {
+            text-align: left;
+            margin-bottom: 2rem;
+            counter-reset: foo;
+            li {
+                position: relative;
+                padding-left: $bullet-left-spacing;
+                line-height: 3rem;
+                font-size: 1.7rem;
+                &:before {
+                    background: url('/bullet.png') no-repeat center center;
+                    background-size: 3rem 3rem;
+                    content: counter(foo);
+                    counter-increment: foo;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 3rem;
+                    width: 3rem;
+                    text-align: center;
+                    line-height: 3rem;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
@@ -220,6 +256,69 @@ $switch-bg: #2da86c;
                 right: auto;
                 left: -10px;
             }
+        }
+    }
+}
+
+@include device-small {
+    .hero {
+        .hero-inner {
+            text-align: center;
+            height: auto;
+            .copy {
+                padding: 1rem;
+                padding-bottom: 1.5rem;
+                float: none;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 0;
+                h2 {
+                    margin: 1rem;
+                    margin-bottom: 2rem;
+                }
+                ol {
+                    display: inline-block;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include device-width-below(400px) {
+    .hero {
+        .hero-inner {
+            .copy {
+                h2 {
+                    font-size: 25px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                ol {
+                    margin-bottom: 1rem;
+                    li {
+                        padding-left: 6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include device-width-below(950px) {
+    .hero .hero-inner {
+        background-image: url('/textie_bg_hero_950x380.jpg');
+    }
+}
+
+@include device-width-below(600px) {
+    .hero {
+        .hero-inner {
+            background-image: url('/textie_bg_hero_600x260.jpg');
+        }
+        .copy ol li {
+            padding-left: 8rem;
         }
     }
 }

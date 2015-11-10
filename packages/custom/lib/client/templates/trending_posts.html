@@ -1,27 +1,14 @@
 <template name="trending_posts">
-  <div class="content-wrapper posts-wrapper grid grid-module">
-  <div style="text-align:center"><h3> Trending Messages </h3></div>
-  {{ #each trending_posts }}
-      {{> modules "postThumbnail"}}
-      <div class="post-info">
-        <div>
-          <div style="float: left;position: relative;top: 17px;left: 18px;">
-            <a href="{{getProfileUrl userId}}" class="avatar-link avatar-small author-avatar">
-              {{> avatar userId=userId shape="circle"}}
-            </a>
-          </div>
-          <h3 class="post-heading">
-            {{> modules "postHeading"}}
-            {{> post_discuss }}
-          </h3>
-        </div>
-        <div style="clear: both;height: 24px;text-align: left;width: 100%;">
-          {{> post_author }}
-        </div>
-        <!-- <div class="post-meta">
-          {{> modules "postMeta"}}
-        </div> -->
+  {{#if hasPosts}}
+    <div class="content-wrapper posts-wrapper grid grid-module trending-posts">
+      <h3>Trending Messages</h3>
+      <div class="posts list posts-grid" aria-live="polite">
+        {{ #each posts }}
+            {{> before_post_item}}
+            {{> post_item}}
+            {{> after_post_item}}
+        {{ /each }}
       </div>
-  {{ /each }}
-</div>
+    </div>
+  {{/if}}
 </template>

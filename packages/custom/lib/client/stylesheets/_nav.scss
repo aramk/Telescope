@@ -1,0 +1,131 @@
+@import "./layout";
+@import "./mixins";
+
+$header-height: 60px;
+
+.outer-wrapper {
+  margin-top: $header-height;
+}
+
+.top-nav .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black !important;
+  .logo-link {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .logo {
+    background-image: url('/textie_logo_transbg.png');
+    height: 50px;
+    width: 140px;
+    @include image-background-contain;
+    
+    position: relative;
+    display: inline-block;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+    -webkit-transform: none;
+  }
+  .subtitle {
+    display: inline-block;
+    line-height: $header-height;
+    vertical-align: bottom;
+    color: white;
+    font-size: 18px;
+  }
+  .search, .pages-menu {
+    display: none;
+  }
+  .secondary-nav {
+    display: inline-block;
+    float: right;
+    top: auto;
+    line-height: $header-height;
+    transform: none;
+    -webkit-transform: none;
+  }
+  .sign-in.btn-button {
+    @include purple-button;
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+}
+
+// Not using mobile nav menu.
+.mobile-nav {
+  display: none;
+}
+
+@mixin mobile-nav {
+  .header {
+    .subtitle {
+      display: inline-block;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      position: absolute;
+      right: 1rem;
+      bottom: 0.2rem;
+    }
+    .secondary-nav {
+      top: 1rem;
+      line-height: 1.5;
+    }
+    .btn {
+      padding: 0.2rem 1.5rem;
+    }
+  }
+}
+
+@include device-width-below(640px) {
+  .top-nav {
+    @include mobile-nav;
+  }
+}
+
+@include device-width-below(350px) {
+  .top-nav .header {
+    .subtitle {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@include device-width-below(400px) {
+  .top-nav .header {
+    padding: 0 1rem;
+    .logo {
+      width: 100px;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+    }
+    .sign-in.btn-button {
+      margin-right: 0;
+    }
+    .sign-up.btn-button {
+      padding-left: 0.5rem;
+      padding-right: 0;
+    }
+  }
+}
+
+@include device-width-below(760px) {
+  .has-user {
+    @include mobile-nav;
+    // .header .secondary-nav {
+    //   top: 0.5rem;
+    // }
+  }
+}
+
+@include device-width-below(500px) {
+  .notifications-menu {
+    display: none !important;
+  }
+}
