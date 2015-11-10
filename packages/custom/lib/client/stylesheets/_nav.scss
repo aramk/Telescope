@@ -62,8 +62,8 @@ $header-height: 60px;
   display: none;
 }
 
-@include device-width-below(640px) {
-  .top-nav .header {
+@mixin mobile-nav {
+  .header {
     .subtitle {
       display: inline-block;
       font-size: 1.5rem;
@@ -76,10 +76,14 @@ $header-height: 60px;
       top: 1rem;
       line-height: 1.5;
     }
-    .btn.btn-button {
+    .btn {
       padding: 0.2rem 1.5rem;
     }
   }
+}
+
+@include device-width-below(640px) {
+  @include mobile-nav;
 }
 
 @include device-width-below(350px) {
@@ -96,7 +100,7 @@ $header-height: 60px;
     .logo {
       width: 100px;
     }
-    .btn-button {
+    .btn {
       padding: 0.5rem 1rem;
     }
     .sign-in.btn-button {
@@ -106,5 +110,20 @@ $header-height: 60px;
       padding-left: 0.5rem;
       padding-right: 0;
     }
+  }
+}
+
+@include device-width-below(760px) {
+  .has-user {
+    @include mobile-nav;
+    // .header .secondary-nav {
+    //   top: 0.5rem;
+    // }
+  }
+}
+
+@include device-width-below(500px) {
+  .notifications-menu {
+    display: none !important;
   }
 }

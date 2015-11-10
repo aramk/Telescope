@@ -4,5 +4,8 @@ Template.hero_layout.replaces('layout');
 Template.layout.helpers({
   isHomepage: function() {
     return Iron.Location.get().path === '/';
+  },
+  userClass: function() {
+    return Meteor.user() ? 'has-user' : '';
   }
 });
