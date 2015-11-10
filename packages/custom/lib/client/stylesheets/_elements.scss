@@ -11,7 +11,6 @@ a.btn {
 }
 
 .btn.btn-button {
-  border-radius: 3rem;
   padding: 0.5rem 2rem;
   &.basic {
     background: none;
@@ -29,4 +28,7 @@ a.btn {
     margin-bottom: 2rem;
   }
   text-align: center;
+  a {
+      display: none;
+  }
 }

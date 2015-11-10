@@ -52,8 +52,6 @@ $footer-inner-width: 60px;
 $social-media-button-height: 60px;
 
 .footer {
-  background: black;
-  color: white;
   padding: 10px 0;
   .social {
     display: inline-block;
@@ -103,8 +101,7 @@ $social-media-button-height: 60px;
     }
   }
   a, a:link, a:visited, a:active {
-    color: white;
-    font-weight: normal;
+    font-weight: bold;
   }
 }
 
