@@ -83,7 +83,9 @@ $header-height: 60px;
 }
 
 @include device-width-below(640px) {
-  @include mobile-nav;
+  .top-nav {
+    @include mobile-nav;
+  }
 }
 
 @include device-width-below(350px) {
