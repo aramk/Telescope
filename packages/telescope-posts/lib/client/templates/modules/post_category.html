@@ -1,9 +1,11 @@
 <template name="post_category">
     {{#if newCategory}}
-    A {{newCategory}} response is wanted for this text.
-    {{else}} {{#if category}}
-    A {{category}} response is wanted for this text.
+      <div class="post-category">A {{newCategory}} response is wanted for this text.</div>
     {{else}}
-    {{> modules "postContext"}}
-    {{/if}}{{/if}}
+      {{#if category}}
+        <div class="post-category">A {{category}} response is wanted for this text.</div>
+      {{else}}
+        {{> modules "postContext"}}
+      {{/if}}
+    {{/if}}
 </template>

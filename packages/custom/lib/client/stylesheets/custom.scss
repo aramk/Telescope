@@ -334,13 +334,15 @@ header
 .posts-list .post-meta {
     margin-left: 17px;
 }
-.posts-list .post-context {
-    margin-left: 17px;
+.post-context, .post-author {
+  margin-left: 53px;
 }
-.posts-list .post-contextinnerinner {
-	color: #444444;
+.backstory {
+  color: #999;
+}
+.posts-list .post-contextinner {
+	color: #444;
 	font-size: 14px;
-    margin-left: -44px;
 }
 // .post-author {
 //     position: absolute;
@@ -349,7 +351,6 @@ header
 // }
 .post-author {
   color:#a4a9ab!important;
-  padding-left: 53px;
 }
 .post-time {
   color:#a4a9ab!important;
@@ -382,26 +383,20 @@ header
 #submit-body-modal{
   background-color: #e4e4e4;
 
-  #postTitleModal{
-
-
-  }
-  #postTitleModal label{
-    margin-left: 4% !important;
-
-  }
-
-  #postTitleModal input{
-    display: inline !important;
-    width: 69% !important;
-    margin-left: 14% !important;
-
+  .form-group {
+    label {
+      margin-left: 4%;
+    }
+    input {
+      width: 65%;
+      float: right;
+      margin-right: 4%;
+    }
   }
 
   #catgoryContainer{
     display: inline-block;
     width: 100%;
-
 
     #categoryLabel{
       display: inline-block !important;
@@ -409,8 +404,6 @@ header
       float: left;
       margin-left: 4%;
     }
-
-
 
     #categorySelection{
       display: inline-block !important;
@@ -572,9 +565,6 @@ header
 .post-meta-item {  
     color:#a4a9ab!important;
 }
-.post-contextinner {
-    padding-left: 77px;
-}
 .post-discuss2 .action {float:right;}
 .posts-grid .post-rank {
     display: none;
@@ -585,7 +575,18 @@ header
 }
 
 @include device-small {
+
   .posts-grid .post {
     margin-bottom: 0;
   }
+
+  #submit-body-modal {
+    .form-group {
+      input {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+
 }

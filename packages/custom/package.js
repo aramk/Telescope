@@ -47,7 +47,6 @@ Package.onUse(function (api) {
     'lib/client/templates/hero_layout.html',
     'lib/client/templates/hero_layout.js',
     'lib/client/templates/post_context.html',
-    'lib/client/templates/post_context.js',
     'lib/client/templates/postButton.html',
     'lib/client/templates/postButton.js',
     'lib/client/templates/postCallToAction.html',
