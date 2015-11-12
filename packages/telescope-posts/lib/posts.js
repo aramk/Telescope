@@ -43,6 +43,18 @@ Posts.schema = new SimpleSchema({
         placeholder: "What text have you received?"
       }
   },
+  /**
+  Context
+  */
+  context: {
+    label: "Backstory",
+    type: String,
+    optional: true,
+    editableBy: ["member", "admin"],
+    autoform: {
+      placeholder: "(optional) What has happened so far?"
+    }
+  },
   /*
   Category for message/posting
   */

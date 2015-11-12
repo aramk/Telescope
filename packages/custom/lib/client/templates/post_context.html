@@ -1,3 +1,5 @@
 <template name="post_context">
-  {{wrappedContext}}
+  {{#if context}}
+    <div class="backstory">Backstory: {{context}}</div>
+  {{/if}}
 </template>
