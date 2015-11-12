@@ -15,9 +15,15 @@
             <span>{{_ "downvote"}}</span>
           </a>
         </div>
+        <div class="comment-main"> 
+          <div class="user-avatar avatar-medium" aria-hidden="true" aria-live="off">{{> avatar userId=userId shape="circle"}}</div>
+          <div class="comment-text markdown">{{{htmlBody}}}</div>
+        </div>
         <div class="comment-meta">
-          <a class="comment-username" href="{{getProfileUrl userId}}">{{authorName}}</a>
-          <a href="{{pathFor route='comment_reply' _id=_id}}" class="comment-permalink comment-time">{{timeAgo ago}},</a>
+          <div class="comment-author">
+            <a href="{{getProfileUrl userId}}">{{authorName}}</a>
+            <span class="comment-permalink comment-time">{{timeAgoShort ago}}</span>
+          </div>
           <span class="points">{{upvotes}}</span> <span class="unit">{{pointsUnitDisplayText}}  </span>
           {{#if canEdit this}}
             | <a class="edit-link" href="{{pathFor route='comment_edit' _id=_id}}">{{_ "edit"}}</a>
@@ -30,10 +36,6 @@
             <img src="/top_comment.png" height="35px">
           </div>
           {{/if}}
-        </div>
-        <div class="comment-main"> 
-          <div class="user-avatar avatar-medium" aria-hidden="true" aria-live="off">{{> avatar userId=userId shape="circle"}}</div>
-          <div class="comment-text markdown">{{{htmlBody}}}</div>
         </div>
       </div>
       {{/if}}

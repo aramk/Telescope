@@ -360,11 +360,18 @@ header
 //     right: 10px;
 //     margin-top: 5px;
 // }
-.post-author {
+.post-author, .comment-author {
   float: right;
   &, a {
     color:#a4a9ab!important;
   }
+}
+.comment-author {
+  float: none;
+  display: inline-block;
+}
+.comment-meta {
+  margin-left: 55px;
 }
 .post-time {
   color:#c4c8ca!important;
@@ -384,8 +391,9 @@ header
   left: 18px;
 }
 .user-avatar {
-  border-radius: 100px;
   float: right;
+  top: 11px;
+  border-radius: 100px;
   .avatar{
     height: 30px;
     width: 30px;

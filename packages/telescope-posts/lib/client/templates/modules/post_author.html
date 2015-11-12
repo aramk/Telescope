@@ -1,6 +1,6 @@
 <template name="post_author">
   <div class="post-author">
-    <a class="post-author-inner" href="{{getProfileUrl userId}}">{{getDisplayName userId}}</a>
+    <a href="{{getProfileUrl userId}}">{{getDisplayName userId}}</a>
     {{#if postedAt}}<span class="post-time">{{timeAgoShort postedAt}}</span>{{/if}}
   </div>
   
