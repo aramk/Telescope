@@ -76,11 +76,12 @@ header
 
 // change thumb size on comments page
 .comment-content{
+  padding-right: 50px;
 	@include small{
-        margin-left: 20px;
+    margin-left: 20px;
 	}
 	@include medium-large{
-        margin-left: 10px;
+    margin-left: 10px;
 	}
 }
 
@@ -178,8 +179,10 @@ header
 }
 
 .top-comment {
-  display: inline-block;
-		vertical-align: middle;
+  position: absolute;
+  right: 45px;
+  top: -8px;
+  z-index: 1;
 }
 
 // getting rid of weird sharing link
@@ -369,6 +372,9 @@ header
 .comment-author {
   float: none;
   display: inline-block;
+  .comment-time {
+    vertical-align: baseline;
+  }
 }
 .comment-meta {
   margin-left: 55px;
