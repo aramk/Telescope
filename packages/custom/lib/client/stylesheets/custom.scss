@@ -88,16 +88,15 @@ $comment-color-inactive: #b3c1c6;
 	}
 	@include medium-large {
 		left: -30px;
+    top: 8px;
 	}
 	a {
-		height: 40px;
-		width: 40px;
+		height: 25px;
+		width: 30px;
     box-shadow: none;
 		i {
 			font-size:20px;
-			height: 40px;
-			width: 40px;
-			line-height: 40px;
+			line-height: 25px;
 		}
 	}
   a i {
@@ -209,8 +208,8 @@ $comment-color-inactive: #b3c1c6;
 
 .top-comment {
   position: absolute;
-  right: 85px;
-  top: -8px;
+  right: 40px;
+  top: -28px;
   z-index: 1;
   background: url('/first-place-badge.png') no-repeat center center;
   height: 40px;
@@ -431,6 +430,7 @@ $comment-color-inactive: #b3c1c6;
 .user-avatar {
   float: right;
   top: 11px;
+  left: 15px;
   border-radius: 100px;
   .avatar{
     height: 30px;
@@ -559,6 +559,11 @@ $comment-color-inactive: #b3c1c6;
   }
 }
 
+.comment-main {
+  display: inline-block;
+  position: relative;
+}
+
 .comment-text a {
 	color: white !important;
 }
@@ -570,6 +575,8 @@ $comment-color-inactive: #b3c1c6;
 .comment-text {
   @include message-bubble(#30c81e, right);
   margin-left: 0;
+  margin-right: 0;
+  display: inline-block;
   @include medium-large{
     margin-left: 0;
   }

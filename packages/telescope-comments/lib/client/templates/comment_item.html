@@ -5,9 +5,6 @@
         <div class="comment-deleted">This comment has been deleted.</div>
       {{else}}
       <div class="comment-content">
-        {{#if isTopComment}}
-          <div class="top-comment"></div>
-        {{/if}}
         <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
           <a class="upvote" href="#">
             {{{icon "upvote"}}}
@@ -18,7 +15,10 @@
             <span>{{_ "downvote"}}</span>
           </a>
         </div>
-        <div class="comment-main"> 
+        <div class="comment-main">
+          {{#if isTopComment}}
+            <div class="top-comment"></div>
+          {{/if}}
           <div class="user-avatar avatar-medium" aria-hidden="true" aria-live="off">{{> avatar userId=userId shape="circle"}}</div>
           <div class="comment-text markdown">{{{htmlBody}}}</div>
         </div>
