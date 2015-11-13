@@ -66,6 +66,7 @@ Package.onUse(function (api) {
     // 'lib/client/templates/custom_post_title.js',
 
     // Misc
+    'lib/client/icons.js',
     'lib/client/routes.js',
     'lib/client/subscriptions.js',
     'lib/client/templates.js'
