@@ -76,32 +76,46 @@ header
 }
 
 // change thumb size on comments page
-.comment-actions{
+
+$comment-color-upvote: #008000;
+$comment-color-downvote: #DD3416;
+$comment-color-action: #7ac0e4;
+$comment-color-inactive: #b3c1c6;
+
+.comment-actions {
 	@include small {
-		left:-30px;
+		left: -30px;
 	}
 	@include medium-large {
-		left:-30px;
+		left: -30px;
 	}
 	a {
-		height:40px;
-		width:40px;
+		height: 40px;
+		width: 40px;
     box-shadow: none;
 		i {
 			font-size:20px;
-			height:40px;
-			width:40px;
-			line-height:40px;
+			height: 40px;
+			width: 40px;
+			line-height: 40px;
 		}
 	}
   a i {
-    color: #7ac0e4;
+    color: $comment-color-action;
   }
   &.upvoted .upvote i {
-    color: green;
+    color: $comment-color-upvote;
   }
   &.downvoted .downvote i {
-    color: #DD3416;
+    color: $comment-color-downvote;
+  }
+}
+
+.author-comment {
+  .comment-actions {
+    a i, &.upvoted .upvote i, &.downvoted .downvote i {
+      color: $comment-color-inactive;
+    }
   }
 }
 
