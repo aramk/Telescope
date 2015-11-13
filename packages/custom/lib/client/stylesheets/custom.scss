@@ -20,32 +20,22 @@ header
     background-color: #84c5f4 !important;
 }
 
-/*  Upvote green. */
-.icon-upvote
-{
-	color: green !important;
-}
-
 /* Purple buttons. */
-.btn
-{
+.btn {
 	background-color: #b515e0;
 }
-.hero .copy .button
-{
+.hero .copy .button {
 	background-color: #b515e0;
 	border-radius: 5px;
 }
 
 /* Purple banners. */
-.error
-{
+.error {
 	background-color: #b515e0;
 }
 
 /* Hide avatar circles on posts. */
-.post-avatars
-{
+.post-avatars {
 	display: none;
 }
 
@@ -87,22 +77,47 @@ header
 
 // change thumb size on comments page
 .comment-actions{
-	@include small{
+	@include small {
 		left:-30px;
 	}
-	@include medium-large{
-		left:-40px;
+	@include medium-large {
+		left:-30px;
 	}
-	a{
+	a {
 		height:40px;
 		width:40px;
-		i{
+    box-shadow: none;
+		i {
 			font-size:20px;
 			height:40px;
 			width:40px;
 			line-height:40px;
 		}
 	}
+  a i {
+    color: #7ac0e4;
+  }
+  &.upvoted .upvote i {
+    color: green;
+  }
+  &.downvoted .downvote i {
+    color: #DD3416;
+  }
+}
+
+// Removed bottom border for comments.
+.comment-new, .comment-content {
+  box-shadow: none;
+}
+.comment-meta {
+  border-bottom: 0;
+}
+
+.comment-form {
+  .form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 // change thumb size on main page
@@ -196,13 +211,13 @@ header
 /* Blue bubbles on messages. */
 
 @mixin message-bubble ($color: #0B93F6, $direction: left) {
-  padding:7px 7px;
+  padding: 7px 7px;
   position: relative;
   color:white;
   background: $color;
-  border-radius:8px;
+  border-radius: 8px;
   margin-right: 25px;
-  margin-left:52px;
+  margin-left: 52px;
   @include small {
     padding-top: 10px;
     padding-bottom: 5px;
@@ -524,7 +539,10 @@ header
 
 /* Green bubbles on responses. */
 
-.comment-main {
+.comment {
+  @include medium-large{
+    margin-left: 50px;
+  }
 }
 
 .comment-text a {
@@ -537,6 +555,10 @@ header
 
 .comment-text {
   @include message-bubble(#30c81e, right);
+  margin-left: 0;
+  @include medium-large{
+    margin-left: 0;
+  }
 }
 
 .post-sharelinks {
