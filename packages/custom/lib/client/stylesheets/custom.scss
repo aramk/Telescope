@@ -180,9 +180,12 @@ header
 
 .top-comment {
   position: absolute;
-  right: 45px;
+  right: 85px;
   top: -8px;
   z-index: 1;
+  background: url('/first-place-badge.png') no-repeat center center;
+  height: 40px;
+  width: 40px;
 }
 
 // getting rid of weird sharing link

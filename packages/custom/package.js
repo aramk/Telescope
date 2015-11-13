@@ -44,6 +44,7 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/hero.scss',
 
     // Templates
+    'lib/client/templates/custom_comment_item.js',
     'lib/client/templates/hero_layout.html',
     'lib/client/templates/hero_layout.js',
     'lib/client/templates/post_context.html',

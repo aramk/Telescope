@@ -5,10 +5,8 @@
         <div class="comment-deleted">This comment has been deleted.</div>
       {{else}}
       <div class="comment-content">
-        {{#if first}}
-          <div class="top-comment">
-            <img src="/top_comment.png" height="35px">
-          </div>
+        {{#if isTopComment}}
+          <div class="top-comment"></div>
         {{/if}}
         <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
           <a class="upvote" href="#">
