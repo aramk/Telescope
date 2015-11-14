@@ -138,14 +138,18 @@ $comment-color-inactive: #b3c1c6;
 
 // change thumb size on main page
 .post-upvote2 {
-    margin-left: -15px;
+  margin-left: -15px;
 	.upvote-link {
 		.icon-upvote{
-            font-size: 20px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
+      font-size: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
     }
+  }
+}
+
+.post .post-upvote2 {
+  display: none;
 }
 
 .post-meta {
