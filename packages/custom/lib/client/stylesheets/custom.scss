@@ -115,6 +115,8 @@ $comment-color-inactive: #b3c1c6;
 
 .author-comment {
   .comment-actions {
+    // Prevent voting on your own comments.
+    pointer-events: none;
     a i, &.upvoted .upvote i, &.downvoted .downvote i {
       color: $comment-color-inactive;
     }
