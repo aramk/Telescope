@@ -1,17 +1,12 @@
 Meteor.methods({
     'createAccount': function(params){
 
-      if(Meteor.isServer) {
-          if(!Meteor.users.findOne()) {
-            console.log('fasjdkhfkjasdhjfklahkjh');
+        if (Meteor.isServer) {
             Accounts.createUser({
               email:    params.email,
               password: params.password,
               username: params.username
             });
-
-
-          }
       }
 
 
