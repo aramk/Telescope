@@ -103,18 +103,21 @@ $comment-color-inactive: #b3c1c6;
     }
     &, &:hover {
       i {
-        color: $comment-color-action;
+        color: $comment-color-action !important;
       }
     }
 	}
   &.upvoted .upvote i {
-    color: $comment-color-upvote;
+    color: $comment-color-upvote !important;
   }
   &.downvoted .downvote i {
-    color: $comment-color-downvote;
+    color: $comment-color-downvote !important;
   }
   &.downvoted .upvote, &.upvoted .downvote {
     cursor: pointer;
+    i {
+      color: $comment-color-inactive !important;
+    }
   }
 }
 
@@ -123,7 +126,7 @@ $comment-color-inactive: #b3c1c6;
     // Prevent voting on your own comments.
     pointer-events: none;
     a i, &.upvoted .upvote i, &.downvoted .downvote i {
-      color: $comment-color-inactive;
+      color: $comment-color-inactive !important;
     }
   }
 }
