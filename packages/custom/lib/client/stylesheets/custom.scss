@@ -389,7 +389,12 @@ $comment-color-inactive: #b3c1c6;
   text-align:left
 }
 .posts-grid .post-context {
+  > * {
     display: none;
+  }
+  .post-author {
+    display: block;
+  }
 }
 .posts-list .post-meta {
     margin-left: 17px;
