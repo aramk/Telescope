@@ -27,7 +27,7 @@
             <a href="{{getProfileUrl userId}}">{{authorName}}</a>
             <span class="comment-permalink comment-time">{{timeAgoShort ago}}</span>
           </div>
-          <span class="points">{{upvotes}}</span> <span class="unit">{{pointsUnitDisplayText}}  </span>
+          <span class="points">{{points}}</span> <span class="unit">{{pointsUnitDisplayText}}  </span>
           {{#if canEdit this}}
             | <a class="edit-link" href="{{pathFor route='comment_edit' _id=_id}}">{{_ "edit"}}</a>
           {{/if}}
