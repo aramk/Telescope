@@ -64,10 +64,16 @@ Template.comment_item.created = function() {
 
 Template.comment_item.helpers({
   commentClass: function () {
+    var cls = '';
+    var authorUserId = Posts.findOne(this.postId).userId;
     // if this comment was made by the post author
-    if (Posts.findOne(this.postId).userId == this.userId) {
-      return 'author-comment';
+    if (authorUserId === this.userId) {
+      cls += ' author-comment';
     }
+    if (this.userId === Meteor.userId()) {
+      cls += ' user-comment';
+    }
+    return cls;
   },
   full_date: function(){
     return this.createdAt.toString();

@@ -101,19 +101,24 @@ $comment-color-inactive: #b3c1c6;
     &:hover {
       background: transparent;
     }
+    &, &:hover {
+      i {
+        color: $comment-color-action;
+      }
+    }
 	}
-  a i {
-    color: $comment-color-action;
-  }
   &.upvoted .upvote i {
     color: $comment-color-upvote;
   }
   &.downvoted .downvote i {
     color: $comment-color-downvote;
   }
+  &.downvoted .upvote, &.upvoted .downvote {
+    cursor: pointer;
+  }
 }
 
-.author-comment {
+.user-comment {
   .comment-actions {
     // Prevent voting on your own comments.
     pointer-events: none;
