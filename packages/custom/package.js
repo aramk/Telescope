@@ -45,6 +45,7 @@ Package.onUse(function (api) {
 
     // Templates
     'lib/client/templates/custom_comment_item.js',
+    'lib/client/templates/custom_comment_list.js',
     'lib/client/templates/hero_layout.html',
     'lib/client/templates/hero_layout.js',
     'lib/client/templates/post_context.html',
