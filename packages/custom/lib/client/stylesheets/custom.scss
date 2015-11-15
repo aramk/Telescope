@@ -20,32 +20,22 @@ header
     background-color: #84c5f4 !important;
 }
 
-/*  Upvote green. */
-.icon-upvote
-{
-	color: green !important;
-}
-
 /* Purple buttons. */
-.btn
-{
+.btn {
 	background-color: #b515e0;
 }
-.hero .copy .button
-{
+.hero .copy .button {
 	background-color: #b515e0;
 	border-radius: 5px;
 }
 
 /* Purple banners. */
-.error
-{
+.error {
 	background-color: #b515e0;
 }
 
 /* Hide avatar circles on posts. */
-.post-avatars
-{
+.post-avatars {
 	display: none;
 }
 
@@ -76,44 +66,92 @@ header
 
 // change thumb size on comments page
 .comment-content{
+  padding-right: 70px;
 	@include small{
-        margin-left: 20px;
+    margin-left: 20px;
 	}
 	@include medium-large{
-        margin-left: 10px;
+    margin-left: 10px;
 	}
 }
 
 // change thumb size on comments page
-.comment-actions{
-	@include small{
-		left:-30px;
+
+$comment-color-upvote: #008000;
+$comment-color-downvote: #DD3416;
+$comment-color-action: #7ac0e4;
+$comment-color-inactive: #b3c1c6;
+
+.comment-actions {
+	@include small {
+		left: -30px;
 	}
-	@include medium-large{
-		left:-40px;
+	@include medium-large {
+		left: -30px;
+    top: 8px;
 	}
-	a{
-		height:40px;
-		width:40px;
-		i{
+	a {
+		height: 25px;
+		width: 30px;
+    box-shadow: none;
+		i {
 			font-size:20px;
-			height:40px;
-			width:40px;
-			line-height:40px;
+			line-height: 25px;
 		}
+    &:hover {
+      background: transparent;
+    }
 	}
+  a i {
+    color: $comment-color-action;
+  }
+  &.upvoted .upvote i {
+    color: $comment-color-upvote;
+  }
+  &.downvoted .downvote i {
+    color: $comment-color-downvote;
+  }
+}
+
+.author-comment {
+  .comment-actions {
+    // Prevent voting on your own comments.
+    pointer-events: none;
+    a i, &.upvoted .upvote i, &.downvoted .downvote i {
+      color: $comment-color-inactive;
+    }
+  }
+}
+
+// Removed bottom border for comments.
+.comment-new, .comment-content {
+  box-shadow: none;
+}
+.comment-meta {
+  border-bottom: 0;
+}
+
+.comment-form {
+  .form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 // change thumb size on main page
 .post-upvote2 {
-    margin-left: -15px;
+  margin-left: -15px;
 	.upvote-link {
 		.icon-upvote{
-            font-size: 20px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
+      font-size: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
     }
+  }
+}
+
+.post .post-upvote2 {
+  display: none;
 }
 
 .post-meta {
@@ -154,7 +192,7 @@ header
 }
 
 .post-heading-admin {
-    @extend .post-heading;
+  @extend .post-heading;
 	background:#b515e0;
 	margin-bottom: 3px;
 	line-height: 1.2;
@@ -178,8 +216,13 @@ header
 }
 
 .top-comment {
-  display: inline-block;
-		vertical-align: middle;
+  position: absolute;
+  right: 10px;
+  top: -28px;
+  z-index: 1;
+  background: url('/first-place-badge.png') no-repeat center center;
+  height: 40px;
+  width: 40px;
 }
 
 // getting rid of weird sharing link
@@ -189,29 +232,39 @@ header
 
 /* Blue bubbles on messages. */
 
-.post-heading {
-	padding:7px 7px;
+@mixin message-bubble ($color: #0B93F6, $direction: left) {
+  padding: 7px 7px;
   position: relative;
-	color:white;
-	background:#0B93F6;
-	border-radius:8px;
-	margin-right: 25px;
-  margin-left:52px;
-	@include small{
-        padding-top: 10px;
-        padding-bottom: 5px;
-    }
-    vertical-align: bottom;
-    height: 100%;
-    }
-    .post-heading:before {
-      border-right: 14px solid #0B93F6;
-      border-top: 17px solid transparent;
-      position: absolute;
-      top: 4px;
+  color:white;
+  background: $color;
+  border-radius: 8px;
+  margin-right: 25px;
+  margin-left: 52px;
+  @include small {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  vertical-align: bottom;
+  height: 100%;
+  &:before {
+    border-top: 17px solid transparent;
+    position: absolute;
+    top: 4px;
+    @if $direction == right {
+      border-left: 14px solid $color;
+      right: -13px;
+    } @else {
+      border-right: 14px solid $color;
       left: -13px;
-      content: "";
+    }
+    content: "";
+  }
 }
+
+.post-heading {
+	@include message-bubble;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 // front page ticks
     .posts-grid .post-meta {
@@ -318,8 +371,7 @@ header
 	    }
     }
 }
-.post-title
-{
+.post-title {
 	padding:  0px;
 	padding-left:  10px;
 	padding-right:  10px;
@@ -334,8 +386,9 @@ header
 .posts-list .post-meta {
     margin-left: 17px;
 }
-.post-context, .post-author {
+.post-context {
   margin-left: 53px;
+  margin-right: 30px;
 }
 .backstory {
   color: #999;
@@ -343,17 +396,31 @@ header
 .posts-list .post-contextinner {
 	color: #444;
 	font-size: 14px;
+  display: inline-block;
 }
 // .post-author {
 //     position: absolute;
 //     right: 10px;
 //     margin-top: 5px;
 // }
-.post-author {
-  color:#a4a9ab!important;
+.post-author, .comment-author {
+  float: right;
+  &, a {
+    color:#a4a9ab!important;
+  }
+}
+.comment-author {
+  float: none;
+  display: inline-block;
+  .comment-time {
+    vertical-align: baseline;
+  }
+}
+.comment-meta {
+  margin-left: 5px;
 }
 .post-time {
-  color:#a4a9ab!important;
+  color:#c4c8ca!important;
 }
 // .post-time {
 //     position: absolute;
@@ -363,21 +430,38 @@ header
 .posts-list .post-time {
     margin-top: 10px;
 }
+.author-avatar, .user-avatar {
+  float: left;
+  position: relative;
+  top: 17px;
+  left: 18px;
+}
+.user-avatar {
+  position: absolute;
+  top: 11px;
+  right: -45px;
+  left: auto;
+  border-radius: 100px;
+  .avatar{
+    height: 30px;
+    width: 30px;
+  }
+}
 .posts-grid .post {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  &:after {
     border-bottom: 0px;
-    padding-bottom: 0px;
-    &:after {
-        border-bottom: 0px;
-    }
+  }
 }
 .posts-grid .post-upvote2 {
-    display: none;
+  display: none;
 }
 .posts-list .post-discuss2 {
-    display: none;
+  display: none;
 }
 .posts-list .post-meta {
-    height: 50px;
+  height: 50px;
 }
 
 #submit-body-modal{
@@ -479,7 +563,15 @@ header
 
 /* Green bubbles on responses. */
 
+.comment {
+  @include medium-large{
+    margin-left: 50px;
+  }
+}
+
 .comment-main {
+  display: inline-block;
+  position: relative;
 }
 
 .comment-text a {
@@ -491,49 +583,13 @@ header
 }
 
 .comment-text {
-	position:relative;
-	padding:7px 16px;
-	background-color: #30c81e;
-	color: white !important;
-	border-radius:25px;
-    display: inline-block;
-    margin-left: 10px;
-
-	@include small{
-        padding-top: 7px;
-        padding-bottom: 5px;
-    }
-    @include medium-large{
-        padding-top: 7px;
-        padding-bottom: 5px;
-    }
-
-    @media screen and (-webkit-min-device-pixel-ratio:0) {
-	    &:before {
-		    content:"";
-		    position:absolute;
-		    z-index:2;
-		    bottom:-2px;
-		    left:-7px;
-		    height:20px;
-		    border-left:20px solid #30c81e;
-		    border-bottom-right-radius: 16px 14px;
-		    -webkit-transform:translate(0, -2px);
-	    }
-
-	    &:after {
-		    content:"";
-		    position:absolute;
-		    z-index:3;
-		    bottom:-2px;
-		    left:4px;
-		    width:26px;
-		    height:20px;
-		    background:white;
-		    border-bottom-right-radius: 10px;
-		    -webkit-transform:translate(-30px, -2px);
-	    }
-    }
+  @include message-bubble(#30c81e, right);
+  margin-left: 0;
+  margin-right: 0;
+  display: inline-block;
+  @include medium-large{
+    margin-left: 0;
+  }
 }
 
 .post-sharelinks {
