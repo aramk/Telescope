@@ -5,25 +5,56 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
+
+  // i18n config (must come first)
+  api.addFiles([
+    'package-tap.i18n'
+  ], ['client', 'server']);
   
   api.use([
     'underscore',
     'coffeescript',
+    'templating',
     'telescope:core@0.20.4',
-    'momentjs:moment@2.10.3'
+    'momentjs:moment@2.10.3',
+    'pfafman:filesaver@0.2.1'
   ], ['client', 'server']);
 
   api.addFiles([
-    'lib/MetricUtils.coffee',
-    'lib/DocMetrics.coffee',
-    'lib/PostMetrics.coffee',
-    'lib/Metrics.coffee'
+    'lib/server/MetricUtils.coffee',
+    'lib/server/DocMetrics.coffee',
+    'lib/server/PostMetrics.coffee',
+    'lib/server/Workbook.coffee',
+    'lib/server/Metrics.coffee'
+  ], 'server');
+
+  api.addFiles([
+    'lib/server/ExcelUtils.coffee'
+  ], ['client', 'server']);
+
+  api.addFiles([
+    'lib/client/metrics.html',
+    'lib/client/metrics.coffee'
+  ], 'client');
+
+  api.export([
+    'Metrics',
+    'Workbook'
   ], 'server');
 
   api.export([
-    'Metrics'
-  ], 'server');
+    'ExcelUtils'
+  ], ['client', 'server']);
 
+  // i18n languages (must come last)
+  api.addFiles([
+    'i18n/en.i18n.json'
+  ], ['client', 'server']);
+
+});
+
+Npm.depends({
+  xlsx: '0.8.0'
 });
 
 // Package.onTest(function(api) {
