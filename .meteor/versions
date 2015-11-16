@@ -151,6 +151,7 @@ telescope:theme-hubble@0.20.4
 telescope:update-prompt@0.20.4
 telescope:users@0.20.4
 templating@1.1.1
+textie:metrics@0.1.0
 tracker@1.0.7
 tsega:bootstrap3-datetimepicker@3.1.3_3
 twbs:bootstrap@3.3.5
