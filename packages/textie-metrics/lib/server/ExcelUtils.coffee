@@ -12,6 +12,8 @@ ExcelUtils =
     epoch = Date.parse(value)
     (epoch - new Date(Date.UTC(1899, 11, 30))) / (24 * 60 * 60 * 1000)
 
+  dateIdentifier: (date) -> moment(date).format().replace(/[^\w-]+/g, '-')
+
 return unless Meteor.isServer
 
 XLSX = Npm.require('xlsx')

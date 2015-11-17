@@ -19,4 +19,6 @@ TemplateClass.events
     Meteor.call 'metrics/download', (err, result) ->
       ab = ExcelUtils.arrayBufferFromString(result)
       blob = new Blob([ab], {type: 'application/octet-stream'})
-      saveAs(blob, 'test.xlsx')
+      moment().format()
+      dateId = ExcelUtils.dateIdentifier()
+      saveAs blob, "textie-metrics-#{dateId}.xlsx"
