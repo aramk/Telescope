@@ -24,6 +24,7 @@ Package.onUse(function (api) {
     'lib/server/MetricUtils.coffee',
     'lib/server/DocMetrics.coffee',
     'lib/server/PostMetrics.coffee',
+    'lib/server/Worksheet.coffee',
     'lib/server/Workbook.coffee',
     'lib/server/Metrics.coffee'
   ], 'server');
@@ -39,6 +40,7 @@ Package.onUse(function (api) {
 
   api.export([
     'Metrics',
+    'Worksheet',
     'Workbook'
   ], 'server');
 

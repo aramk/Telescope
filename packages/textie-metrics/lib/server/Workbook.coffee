@@ -7,5 +7,6 @@ class Workbook
 
   addSheet: (name, sheet) ->
     if @Sheets[name] then throw new Error "Sheet already added: #{name}"
+    if sheet instanceof Worksheet then sheet = sheet.getSheet()
     @Sheets[name] = sheet
-    @SheetNames
+    @SheetNames.push(name)

@@ -6,7 +6,7 @@ class @PostMetrics extends DocMetrics
   transform: (doc) ->
     result =
       postId: doc._id
-      date: MetricUtils.formatDate(doc.createdAt)
+      date: doc.createdAt
       category: doc.category
       message: doc.title
       backstory: doc.context

@@ -21,11 +21,12 @@ Metrics =
 
     wb = new Workbook()
     _.each results, (metrics, metricId) ->
-      sheet = {}
-      _.each _.keys(_.first(metrics)), (key, i) ->
-        cellRef = XLSX.utils.encode_cell {c: i, r: 0}
-        cell = {v: key, t: ExcelUtils.getCellType(key)}
-        sheet[cellRef] = cell
+      headers = _.keys(_.first(metrics))
+      data = if _.isEmpty(headers) then [] else [headers]
+      _.each metrics, (valueMap) ->
+        data.push _.values(valueMap)
+      sheet = new Worksheet()
+      sheet.addData(data)
       wb.addSheet(metricId, sheet)
     wb
 
