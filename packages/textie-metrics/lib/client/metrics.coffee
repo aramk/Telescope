@@ -15,10 +15,15 @@ Meteor.startup ->
 TemplateClass = Template.metrics
 
 TemplateClass.events
-  'click .btn.btn-primary': ->
+  'click .btn.btn-primary': (e, template) ->
+    $button = $(e.currentTarget)
+    $button.addClass('disabled')
     Meteor.call 'metrics/download', (err, result) ->
+      $button.addClass('false')
+      if err then return alert "Failed to download: #{err}"
+
       ab = ExcelUtils.arrayBufferFromString(result)
-      blob = new Blob([ab], {type: 'application/octet-stream'})
+      blob = new Blob [ab], {type: 'application/octet-stream'}
       moment().format()
       dateId = ExcelUtils.dateIdentifier()
       saveAs blob, "textie-metrics-#{dateId}.xlsx"

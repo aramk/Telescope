@@ -11,4 +11,6 @@ class @PostMetrics extends DocMetrics
       message: doc.title
       backstory: doc.context
       userId: doc.userId
+      viewCount: doc.viewCount
+      commentCount: doc.commentCount
       url: Telescope.utils.getPostUrl(doc._id)

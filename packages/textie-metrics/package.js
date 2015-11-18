@@ -24,6 +24,9 @@ Package.onUse(function (api) {
     'lib/server/MetricUtils.coffee',
     'lib/server/DocMetrics.coffee',
     'lib/server/PostMetrics.coffee',
+    'lib/server/ReplyMetrics.coffee',
+    'lib/server/UserMetrics.coffee',
+    'lib/server/VoteMetrics.coffee',
     'lib/server/Worksheet.coffee',
     'lib/server/Workbook.coffee',
     'lib/server/Metrics.coffee'

@@ -8,4 +8,4 @@ class @DocMetrics
       sort: createdAt: -1
     , options
     docs = @collection.find(selector, options).fetch()
-    _.map docs, @transform.bind(@)
+    _.flatten _.map docs, @transform.bind(@)

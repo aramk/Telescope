@@ -4,6 +4,9 @@ Metrics =
 
   _metrics:
     posts: new PostMetrics()
+    reply: new ReplyMetrics()
+    users: new UserMetrics()
+    votes: new VoteMetrics()
 
   get: (name, args...) ->
     metrics = @_metrics[name]
@@ -24,7 +27,7 @@ Metrics =
       headers = _.keys(_.first(metrics))
       data = if _.isEmpty(headers) then [] else [headers]
       _.each metrics, (valueMap) ->
-        data.push _.values(valueMap)
+        data.push _.values(valueMap) unless _.isEmpty(valueMap)
       sheet = new Worksheet()
       sheet.addData(data)
       wb.addSheet(metricId, sheet)
