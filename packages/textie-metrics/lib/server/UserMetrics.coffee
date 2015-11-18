@@ -10,13 +10,15 @@ class @UserMetrics extends DocMetrics
     else if !_.isEmpty('email')
       joinType = 'email'
     telescope = doc.telescope
+    lastLogin = doc.status?.lastLogin
     result =
       userId: doc._id
       joinDate: doc.createdAt
       joinType: joinType
+      username: doc.username
       email: doc.emails?[0]?.address
       postCount: telescope.postCount
       replyCount: telescope.commentCount
-      ipAddress: null
-      pageViews: null
-      lastOnline: null
+      ipAddress: lastLogin?.ipAddr
+      postViews: telescope.postsViewCount
+      lastOnline: lastLogin?.date

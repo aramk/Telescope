@@ -17,7 +17,9 @@ Package.onUse(function (api) {
     'templating',
     'telescope:core@0.20.4',
     'momentjs:moment@2.10.3',
-    'pfafman:filesaver@0.2.1'
+    'pfafman:filesaver@0.2.1',
+    'mizzao:user-status@0.6.5',
+    'matb33:collection-hooks@0.8.0'
   ], ['client', 'server']);
 
   api.addFiles([
@@ -33,7 +35,9 @@ Package.onUse(function (api) {
   ], 'server');
 
   api.addFiles([
-    'lib/server/ExcelUtils.coffee'
+    'lib/common/userSchema.coffee',
+    'lib/common/ExcelUtils.coffee',
+    'lib/common/views.coffee'
   ], ['client', 'server']);
 
   api.addFiles([
