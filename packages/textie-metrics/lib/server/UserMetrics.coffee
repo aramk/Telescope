@@ -20,5 +20,7 @@ class @UserMetrics extends DocMetrics
       postCount: telescope.postCount
       replyCount: telescope.commentCount
       postViews: telescope.postsViewCount
+      upvotes: telescope.upvotedComments?.length ? 0
+      downvotes: telescope.downvotedComments?.length ? 0
       ipAddress: lastLogin?.ipAddr
       lastOnline: lastLogin?.date
