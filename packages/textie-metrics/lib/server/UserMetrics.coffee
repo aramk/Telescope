@@ -19,6 +19,6 @@ class @UserMetrics extends DocMetrics
       email: doc.emails?[0]?.address
       postCount: telescope.postCount
       replyCount: telescope.commentCount
-      ipAddress: lastLogin?.ipAddr
       postViews: telescope.postsViewCount
+      ipAddress: lastLogin?.ipAddr
       lastOnline: lastLogin?.date
