@@ -19,7 +19,7 @@ TemplateClass.events
     $button = $(e.currentTarget)
     $button.addClass('disabled')
     Meteor.call 'metrics/download', (err, result) ->
-      $button.removeClass('false')
+      $button.removeClass('disabled')
       if err then return alert "Failed to download: #{err}"
 
       ab = ExcelUtils.arrayBufferFromString(result)
