@@ -30,3 +30,20 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+@mixin flex($direction: column) {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-grow($size: 1) {
+  flex-grow: $size;
+  -webkit-flex-grow: $size;
+}
+
+@mixin flex-shrink($size: 0) {
+  flex-shrink: $size;
+  -webkit-flex-shrink: $size;
+}

@@ -15,7 +15,33 @@
           <div class="hero-inner">
             {{#if currentUser}}
               <div class="profile overlay-segment">
-                <div>{{> postButton}}</div>
+                <div class="profile-inner">
+                  <div class="avatar-container">
+                    {{> avatar userId=user._id shape="circle"}}
+                    <div class="replies">
+                      <div class="value">{{user.telescope.commentCount}}</div>
+                      <div class="label">Replies</div>
+                    </div>
+                  </div>
+                  <div class="links">
+                    <div class="links-inner">
+                      <a class="replies">
+                        <span class="icon"><i class="fa fa-pencil"></i></span>
+                        My Replies
+                      </a>
+                      <a class="posts">
+                        <span class="icon"><i class="fa fa-envelope-o"></i></span>
+                        My Posts
+                      </a>
+                      <a class="categories">
+                        <span class="icon"><i class="fa fa-smile-o"></i></span>
+                        Categories
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-wrapper">{{> postButton}}</div>
+                </div>
+                <div class="post-wrapper">{{> postButton}}</div>
               </div>
             {{else}}
               <div class="copy overlay-segment">

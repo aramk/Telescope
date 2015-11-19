@@ -7,5 +7,8 @@ Template.layout.helpers({
   },
   userClass: function() {
     return Meteor.user() ? 'has-user' : '';
+  },
+  user: function() {
+    return Meteor.user();
   }
 });

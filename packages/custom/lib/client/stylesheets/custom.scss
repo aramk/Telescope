@@ -15,9 +15,13 @@ $medium-break: 800px;
   }
 }
 
-header
-{
+header {
     background-color: #84c5f4 !important;
+}
+
+// Hide the update banner for now - we'll know when to update.
+.update-banner {
+  display: none;
 }
 
 /* Purple buttons. */
