@@ -21,27 +21,20 @@ body {
 
         max-width: $device-width-max;
         margin: 0 auto;
-        margin-top: -10px;
+        text-align: center;
     }
 
-    .copy {
+    .overlay-segment {
         padding: 2rem 3rem;
+        margin: 2rem;
         color: #fff;
         background: rgba(0,0,0,0.4);
         display: inline-block;
-        float: right;
-        margin-top: 60px;
-        margin-right: 10%;
         border-radius: 30px;
         text-align: center;
 
         @media screen and (max-width: 40em) {
             top: 10%;
-        }
-
-        $bullet-left-spacing: 5rem;
-        > h2 {
-            margin: 2rem $bullet-left-spacing;
         }
 
         h1, h2, h3 {
@@ -51,30 +44,54 @@ body {
             }
         }
 
-        ol {
-            text-align: left;
-            margin-bottom: 2rem;
-            counter-reset: foo;
-            li {
-                position: relative;
-                padding-left: $bullet-left-spacing;
-                line-height: 3rem;
-                font-size: 1.7rem;
-                &:before {
-                    background: url('/bullet.png') no-repeat center center;
-                    background-size: 3rem 3rem;
-                    content: counter(foo);
-                    counter-increment: foo;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 3rem;
-                    width: 3rem;
-                    text-align: center;
+        .post-button {
+            background-color: #b515e0;
+            border-radius: 5px;
+        }
+
+        &.copy {
+            float: right;
+            margin-top: 60px;
+            margin-right: 10%;
+
+            $bullet-left-spacing: 5rem;
+            > h2 {
+                margin: 2rem $bullet-left-spacing;
+            }
+
+            ol {
+                text-align: left;
+                margin-bottom: 2rem;
+                counter-reset: foo;
+                li {
+                    position: relative;
+                    padding-left: $bullet-left-spacing;
                     line-height: 3rem;
-                    font-weight: bold;
+                    font-size: 1.7rem;
+                    &:before {
+                        background: url('/bullet.png') no-repeat center center;
+                        background-size: 3rem 3rem;
+                        content: counter(foo);
+                        counter-increment: foo;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 3rem;
+                        width: 3rem;
+                        text-align: center;
+                        line-height: 3rem;
+                        font-weight: bold;
+                    }
                 }
             }
+        }
+
+        &.profile {
+            margin-top: 60px;
+            width: 600px;
+            height: 250px;
+            display: block;
+            background: rgba(0, 0, 0, 0.6);
         }
     }
 }

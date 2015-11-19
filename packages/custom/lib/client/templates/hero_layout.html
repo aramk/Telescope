@@ -13,17 +13,23 @@
       {{#if isHomepage}}
         <section class="hero">
           <div class="hero-inner">
-            <div class="copy">
-              <h2>Here's how Textie works</h2>
-              <ol>
-                <li>Post a text you've received</li>
-                <li class="desktop-only">Responses are suggested by people like you</li>
-                <li class="desktop-only">Responses are voted up, the best float to the top</li>
-                <li class="mobile-only">Responses are suggested</li>
-                <li class="mobile-only">Responses are voted up</li>
-              </ol>
-              <div>{{> postButton}}</div>
-            </div>
+            {{#if currentUser}}
+              <div class="profile overlay-segment">
+                <div>{{> postButton}}</div>
+              </div>
+            {{else}}
+              <div class="copy overlay-segment">
+                <h2>Here's how Textie works</h2>
+                <ol>
+                  <li>Post a text you've received</li>
+                  <li class="desktop-only">Responses are suggested by people like you</li>
+                  <li class="desktop-only">Responses are voted up, the best float to the top</li>
+                  <li class="mobile-only">Responses are suggested</li>
+                  <li class="mobile-only">Responses are voted up</li>
+                </ol>
+                <div>{{> postButton}}</div>
+              </div>
+            {{/if}}
           </div>
         </section>
       {{/if}}
