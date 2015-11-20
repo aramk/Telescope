@@ -10,7 +10,7 @@
         {{extraCss}}
       </style>
 
-      {{#if isHomepage}}
+      {{#if showHero}}
         <section class="hero">
           <div class="hero-inner">
             {{#if currentUser}}
@@ -25,15 +25,15 @@
                   </div>
                   <div class="links">
                     <div class="links-inner">
-                      <a class="replies">
+                      <a class="replies" href="{{pathFor route='userReplies'}}">
                         <span class="icon"><i class="fa fa-pencil"></i></span>
                         My Replies
                       </a>
-                      <a class="posts">
+                      <a class="posts" href="{{pathFor route='userPosts'}}">
                         <span class="icon"><i class="fa fa-envelope-o"></i></span>
                         My Posts
                       </a>
-                      <a class="categories">
+                      <a class="categories" href="{{pathFor route='categories'}}">
                         <span class="icon"><i class="fa fa-smile-o"></i></span>
                         Categories
                       </a>

@@ -14,7 +14,7 @@ Telescope.menuItems.add('userMenu', [
   },
   {
     route: function () {
-      return '/privacy';
+      return Router.path('privacy');
     },
     label: 'privacy_policy'
   },

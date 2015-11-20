@@ -3,6 +3,13 @@ Template.hero_layout.replaces('layout');
 var TemplateClass = Template.layout;
 
 TemplateClass.helpers({
+  showHero: function() {
+    var heroRoutes = ['userReplies', 'userPosts'];
+    var path = Iron.Location.get().path;
+    var route = Router.current().route;
+    var name = route && route.getName();
+    return path === '/' || _.contains(heroRoutes, name);
+  },
   isHomepage: function() {
     return Iron.Location.get().path === '/';
   },
@@ -11,7 +18,7 @@ TemplateClass.helpers({
   },
   user: function() {
     return Meteor.user();
-  }
+  },
 });
 
 TemplateClass.events({

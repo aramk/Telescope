@@ -11,5 +11,8 @@
   "privacy_policy": "Privacy Policy",
   "facebook": "Facebook",
   "twitter": "Twitter",
-  "sign_out": "Log Out"
+  "sign_out": "Log Out",
+  "comment": "Comment",
+  "comments": "Comments",
+  "commentedAt": "Comment At"
 }

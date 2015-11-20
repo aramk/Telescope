@@ -1,0 +1,11 @@
+<template name="textie_comments_list">
+  {{#each commentsCursor}}
+    <div>Post: <a href="{{pathFor route='post_page' _id=postId}}/">{{post.title}}</a></div>
+    <ul class="comments comment-list" aria-live="polite">
+      {{> comment_item}}
+    </ul>
+  {{/each}}
+  {{#if hasMoreComments}}
+    <a class="more-button grid-module" href="#"><span>{{_ "load_more"}}</span></a>
+  {{/if}}
+</template>

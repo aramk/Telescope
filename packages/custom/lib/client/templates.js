@@ -5,7 +5,7 @@
 // Telescope.config.addCustomPrefix('textie_');
 
 var prefix = 'textie_';
-var templateNames = ['nav', 'user_menu', 'footer', 'user_menu_label'];
+var templateNames = ['nav', 'user_menu', 'footer', 'user_menu_label', 'user_comments'];
 _.each(templateNames, function(name) {
   Template[prefix + name].replaces(name);
 });
