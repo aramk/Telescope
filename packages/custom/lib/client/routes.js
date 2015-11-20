@@ -15,4 +15,9 @@ Meteor.startup(function () {
     template: 'user_posts'
   });
 
+  Router.route('/post-categories', {
+    name: 'postCategories',
+    template: 'textie_categories'
+  });
+
 });

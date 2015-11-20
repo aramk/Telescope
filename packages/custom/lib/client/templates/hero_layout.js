@@ -4,7 +4,7 @@ var TemplateClass = Template.layout;
 
 TemplateClass.helpers({
   showHero: function() {
-    var heroRoutes = ['userReplies', 'userPosts'];
+    var heroRoutes = ['userReplies', 'userPosts', 'postCategories'];
     var path = Iron.Location.get().path;
     var route = Router.current().route;
     var name = route && route.getName();

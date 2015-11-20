@@ -29,7 +29,8 @@ Package.onUse(function (api) {
     'lib/custom_fields.js',
     'lib/custom_namespace.js',
     'lib/template_modules.js',
-    'lib/callbacks.js'
+    'lib/callbacks.js',
+    'lib/views.js'
   ], ['client', 'server']);
 
   // client
@@ -43,6 +44,7 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/custom.scss',
     'lib/client/stylesheets/hero.scss',
     'lib/client/stylesheets/user_comments.scss',
+    'lib/client/stylesheets/profile.scss',
 
     // Templates
     'lib/client/templates/custom_comment_item.js',
@@ -58,21 +60,27 @@ Package.onUse(function (api) {
     'lib/client/templates/modals/submit_message_modal.html',
     'lib/client/templates/modals/submit_message_modal.js',
     'lib/client/templates/user_replies.html',
+    'lib/client/templates/textie_categories.html',
+    'lib/client/templates/textie_categories.js',
+    'lib/client/templates/textie_comments_list.html',
+    'lib/client/templates/textie_comments_list.js',
     'lib/client/templates/textie_footer.html',
     'lib/client/templates/textie_nav.html',
     'lib/client/templates/textie_user_comments.html',
     'lib/client/templates/textie_user_comments.js',
     'lib/client/templates/textie_user_menu.html',
     'lib/client/templates/textie_user_menu_label.html',
+    'lib/client/templates/textie_user_posts.html',
     'lib/client/templates/textie_user_posts.js',
-    'lib/client/templates/textie_comments_list.html',
-    'lib/client/templates/textie_comments_list.js',
     'lib/client/templates/trending_posts.html',
     'lib/client/templates/trending_posts.js',
     // 'lib/client/templates/hello.html',
     // 'lib/client/templates/hello.js',
     // 'lib/client/templates/custom_post_title.html',
     // 'lib/client/templates/custom_post_title.js',
+
+    // Elements
+    'lib/client/elements/ReactiveElement.js',
 
     // Misc
     'lib/client/icons.js',
