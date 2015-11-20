@@ -5,5 +5,10 @@
   "customPostField": "My Custom Post Field",
   "customCommentField": "My Custom Comment Field",
   "customUserField": "My Custom User Field",
-  "customSettingsField": "My Custom Settings Field"
+  "customSettingsField": "My Custom Settings Field",
+  "contact_us": "Contact Us",
+  "media_pack": "Media Pack",
+  "privacy_policy": "Privacy Policy",
+  "facebook": "Facebook",
+  "twitter": "Twitter"
 }

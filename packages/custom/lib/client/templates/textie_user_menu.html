@@ -1,6 +1,6 @@
 <template name="textie_user_menu">
   {{#if isLoggedIn}}
-    {{> menuComponent menuName="user" menuLabel=menuLabel menuItems=menuItems menuClass="header-submodule" menuMode=menuMode menuCollapsed=true}}
+    {{> menuComponent menuName="user" menuLabelTemplate="user_menu_label" menuLabelData=user menuItems=menuItems menuMode=menuMode menuCollapsed=true menuClass=moduleClass}}
   {{else}}
     <a id="registerLink" class="btn btn-button account-link sign-in">Sign Up</a>
     <a class="btn btn-button basic account-link sign-up" href="{{pathFor route='atSignIn'}}">Log In</a>

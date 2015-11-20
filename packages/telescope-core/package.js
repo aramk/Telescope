@@ -73,6 +73,7 @@ Package.onUse(function(api) {
     'lib/client/templates/nav/submit_button.js',
     'lib/client/templates/nav/user_menu.html',
     'lib/client/templates/nav/user_menu.js',
+    'lib/client/templates/nav/user_menu_label.html',
     'lib/client/templates/menu/menu.scss',
     'lib/client/templates/menu/menu_component.html',
     'lib/client/templates/menu/menu_component.js',

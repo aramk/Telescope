@@ -90,6 +90,7 @@ body {
             margin-top: 50px;
             width: 600px;
             background: rgba(0, 0, 0, 0.6);
+            float: right;
             .profile-inner {
                 @include flex(row);
                 > div {
@@ -104,6 +105,7 @@ body {
                     height: 100px;
                     width: 100px;
                     display: inline-block;
+                    cursor: pointer;
                     @include flex-shrink;
                     .avatar-initials {
                         line-height: 100px;
@@ -422,6 +424,7 @@ $switch-bg: #2da86c;
     .hero .hero-inner .profile {
         margin-top: 20px;
         width: auto;
+        float: none;
         .profile-inner {
             margin-bottom: 2rem;
             &, > div {

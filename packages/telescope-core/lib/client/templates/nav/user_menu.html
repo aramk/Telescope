@@ -1,16 +1,8 @@
 <template name="user_menu">
   {{#if isLoggedIn}}
-    &nbsp;&nbsp;&nbsp;
-    <a id="media-link" href="http://textie.strikingly.com/">Media Kit</a>
-    &nbsp;&nbsp;&nbsp;
-    {{> menuComponent menuName="user" menuLabel=menuLabel menuItems=menuItems menuClass="header-submodule" menuMode=menuMode menuCollapsed=true}}
+    {{> menuComponent menuName="user" menuLabelTemplate="user_menu_label" menuLabelData=user menuItems=menuItems menuMode=menuMode menuCollapsed=true menuClass=moduleClass}}
   {{else}}
-    <a id="media-link" href="http://textie.strikingly.com/">Media Kit</a>
-    &nbsp;&nbsp;&nbsp;
     <a id="registerLink" class="account-link sign-in">{{_ "sign_up"}}</a>
     <a class="account-link sign-up" href="{{pathFor route='atSignIn'}}">{{_ "sign_in"}}</a>
-    &nbsp;&nbsp;&nbsp;
-    <!--<a id="sign-in-as-guest" class="account-link sign-up" href="#">Sign In as a Guest</a>-->
   {{/if}}
-
 </template>

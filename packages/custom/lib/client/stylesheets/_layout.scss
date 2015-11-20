@@ -51,32 +51,33 @@ $device-width-max: 1200px;
 $footer-inner-width: 60px;
 $social-media-button-height: 60px;
 
-.footer {
-  padding: 10px 0;
-  .social {
+.social-links {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 3rem;
+  line-height: 0;
+  vertical-align: middle;
+  > a {
+    @include image-background-contain;
     display: inline-block;
-    margin-left: 1rem;
-    margin-right: 3rem;
-    line-height: 0;
-    vertical-align: middle;
-    > a {
-      @include image-background-contain;
-      display: inline-block;
-      width: $social-media-button-height;
-      height: $social-media-button-height;
-      margin: 0;
-      margin-right: 1rem;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    .facebook {
-      background-image: url('/social-fb-logo.png');
-    }
-    .twitter {
-      background-image: url('/social-twitter-logo.png');
+    width: $social-media-button-height;
+    height: $social-media-button-height;
+    margin: 0;
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
     }
   }
+  .facebook {
+    background-image: url('/social-fb-logo.png');
+  }
+  .twitter {
+    background-image: url('/social-twitter-logo.png');
+  }
+}
+
+.footer {
+  padding: 10px 0;
   .links {
     display: inline-block;
     vertical-align: middle;

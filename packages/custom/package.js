@@ -59,6 +59,7 @@ Package.onUse(function (api) {
     'lib/client/templates/textie_footer.html',
     'lib/client/templates/textie_nav.html',
     'lib/client/templates/textie_user_menu.html',
+    'lib/client/templates/textie_user_menu_label.html',
     'lib/client/templates/trending_posts.html',
     'lib/client/templates/trending_posts.js',
     // 'lib/client/templates/hello.html',
@@ -70,7 +71,8 @@ Package.onUse(function (api) {
     'lib/client/icons.js',
     'lib/client/routes.js',
     'lib/client/subscriptions.js',
-    'lib/client/templates.js'
+    'lib/client/templates.js',
+    'lib/client/menus.js'
   ], 'client');
 
   // server

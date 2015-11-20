@@ -77,6 +77,9 @@ Template.menuComponent.helpers({
   },
   itemRoute: function () {
     return getRoute(this);
+  },
+  labelIsTemplate: function () {
+    return !!this.menuLabelTemplate;
   }
 });
 

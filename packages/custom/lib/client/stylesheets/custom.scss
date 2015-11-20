@@ -615,9 +615,11 @@ $comment-color-inactive: #b3c1c6;
   }
 
 }
-.avatar {
-  width:25px;
-  height:25px;
+.avatar-small {
+  &, .avatar {
+    width:25px;
+    height:25px;
+  }
 }
 .posts-list .post-contextinner:before {
     top: -20px;

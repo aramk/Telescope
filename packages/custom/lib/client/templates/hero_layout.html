@@ -63,7 +63,9 @@
       <div class="content-wrapper">
         {{#if isHomepage}}
           {{> modules "trending_posts"}}
-          {{> footer}}
+          {{#unless currentUser}}
+            {{> footer}}
+          {{/unless}}
           {{> postCallToAction}}
         {{/if}}
         {{> messages}}

@@ -41,6 +41,17 @@ $header-height: 60px;
   .search, .pages-menu {
     display: none;
   }
+  .social-links {
+    margin-right: 1rem;
+    line-height: 60px;
+    vertical-align: top;
+    > a {
+      height: 30px;
+      width: 30px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+  }
   .secondary-nav {
     display: inline-block;
     float: right;
@@ -54,6 +65,50 @@ $header-height: 60px;
   }
   a:hover, a:focus {
     text-decoration: none;
+  }
+  .user-menu {
+    display: inline-block;
+    margin-right: 1rem;
+    .menu-top-level {
+      display: inline-block;
+    }
+    .user-menu-label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .user-menu-username {
+      display: none;
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      .avatar-initials {
+        line-height: 30px;
+      }
+    }
+    &.menu-dropdown.menu-has-items .menu-top-level:after {
+      font-size: 12px;
+      color: #9db1c3;
+    }
+    .menu-menu {
+      top: 20px;
+      right: 0;
+      left: auto;
+    }
+    .user-menu-label {
+      .mobile-only {
+        font-size: 2.5rem;
+        line-height: 0;
+        margin-top: -0.5rem;
+      }
+    }
+  }
+  .submit.btn {
+    display: none;
+  }
+  // Disabled for now.
+  .notifications-menu {
+    display: none;
   }
 }
 
@@ -118,14 +173,24 @@ $header-height: 60px;
 @include device-width-below(760px) {
   .has-user {
     @include mobile-nav;
-    // .header .secondary-nav {
-    //   top: 0.5rem;
-    // }
+    .header {
+      .social-links {
+        line-height: 0;
+      }
+    }
   }
 }
 
 @include device-width-below(500px) {
   .notifications-menu {
     display: none !important;
+  }
+}
+
+@include device-small {
+  .top-nav .header {
+    .user-menu .menu-top-level:after {
+      display: none;
+    }
   }
 }

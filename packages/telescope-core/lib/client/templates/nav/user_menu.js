@@ -1,4 +1,7 @@
 Template.user_menu.helpers({
+  user: function () {
+    return Meteor.user();
+  },
   menuLabel: function () {
     return Users.getDisplayName(Meteor.user());
   },
