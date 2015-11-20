@@ -88,6 +88,7 @@ body {
 
         &.profile {
             margin-top: 50px;
+            margin-right: 5rem;
             width: 600px;
             background: rgba(0, 0, 0, 0.6);
             float: right;
@@ -406,6 +407,9 @@ $switch-bg: #2da86c;
 @include device-width-below(950px) {
     .hero .hero-inner {
         background-image: url('/textie_bg_hero_950x380.jpg');
+        .profile {
+            margin-right: 2rem;
+        }
     }
 }
 

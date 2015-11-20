@@ -1,5 +1,9 @@
 <template name="postButton">
   <a class="btn post-button btn-button">
-    Post a Text
+    {{#if text}}
+      {{text}}
+    {{else}}
+      Post a Text
+    {{/if}}
   </a>
 </template>

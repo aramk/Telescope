@@ -42,13 +42,13 @@ $header-height: 60px;
     display: none;
   }
   .social-links {
-    margin-right: 1rem;
+    margin-right: 0;
     line-height: 60px;
     vertical-align: top;
     > a {
       height: 30px;
       width: 30px;
-      margin-right: 0.5rem;
+      margin-right: 1rem;
       vertical-align: middle;
     }
   }
@@ -68,7 +68,6 @@ $header-height: 60px;
   }
   .user-menu {
     display: inline-block;
-    margin-right: 1rem;
     .menu-top-level {
       display: inline-block;
     }
@@ -76,7 +75,7 @@ $header-height: 60px;
       display: inline-block;
       vertical-align: middle;
     }
-    .user-menu-username {
+    .user-menu-username, .menu-description {
       display: none;
     }
     .avatar {
@@ -87,8 +86,9 @@ $header-height: 60px;
       }
     }
     &.menu-dropdown.menu-has-items .menu-top-level:after {
-      font-size: 12px;
+      font-size: 25px;
       color: #9db1c3;
+      top: 3px;
     }
     .menu-menu {
       top: 20px;
@@ -105,6 +105,12 @@ $header-height: 60px;
   }
   .submit.btn {
     display: none;
+  }
+  .post-button {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    margin-left: 1rme;
   }
   // Disabled for now.
   .notifications-menu {
@@ -124,7 +130,7 @@ $header-height: 60px;
       font-size: 1.5rem;
       line-height: 2rem;
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       bottom: 0.2rem;
     }
     .secondary-nav {
@@ -191,6 +197,13 @@ $header-height: 60px;
   .top-nav .header {
     .user-menu .menu-top-level:after {
       display: none;
+    }
+    .subtitle {
+      right: 1rem;
+    }
+    .mobile-only.inline {
+      margin-left: 1rem;
+      display: inline-block !important;
     }
   }
 }
