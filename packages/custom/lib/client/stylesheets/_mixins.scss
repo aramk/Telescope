@@ -47,3 +47,8 @@
   flex-shrink: $size;
   -webkit-flex-shrink: $size;
 }
+
+@mixin flex-wrap($wrap: wrap) {
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+}

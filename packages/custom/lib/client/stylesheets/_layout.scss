@@ -21,6 +21,12 @@ $device-width-max: 1200px;
   };
 }
 
+@mixin device-large {
+  @include device-width-above($device-width-small) {
+    @content;
+  };
+}
+
 // Show/hide content for desktop/mobile.
 
 .mobile-only {
