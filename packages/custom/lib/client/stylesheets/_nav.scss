@@ -183,6 +183,9 @@ $header-height: 60px;
       .social-links {
         line-height: 0;
       }
+      .user-menu {
+        margin-top: -10px;
+      }
     }
   }
 }
@@ -195,8 +198,11 @@ $header-height: 60px;
 
 @include device-small {
   .top-nav .header {
-    .user-menu .menu-top-level:after {
-      display: none;
+    .user-menu {
+      margin-top: 0;
+      .menu-top-level:after {
+        display: none;
+      }
     }
     .subtitle {
       right: 1rem;
