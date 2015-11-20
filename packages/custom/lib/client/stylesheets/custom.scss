@@ -113,7 +113,7 @@ $comment-color-inactive: #b3c1c6;
   &.downvoted .downvote i {
     color: $comment-color-downvote !important;
   }
-  &.downvoted .upvote, &.upvoted .downvote {
+  &.downvoted.not-upvoted .upvote, &.upvoted.not-downvoted .downvote {
     cursor: pointer;
     i {
       color: $comment-color-inactive !important;

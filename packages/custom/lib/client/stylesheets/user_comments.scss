@@ -1,8 +1,55 @@
+@import './_mixins';
+
 .user-profile-comments {
-  .comment {
-    margin-left: 0;
+  > .comments {
+    position: relative;
+    margin-left: 2rem;
+    @include flex(row);
+    > .comment-actions {
+      position: relative;
+      display: inline-block;
+      min-width: 30px;
+      vertical-align: top;
+      top: 10px;
+      left: 0;
+      a {
+        overflow: visible;
+        text-align: left;
+        text-indent: 0;
+        width: auto;
+        pointer-events: none;
+        cursor: default;
+        i {
+          position: relative;
+          display: inline-block;
+          text-align: left;
+          width: auto;
+          height: auto;
+          vertical-align: middle;
+        }
+        .value {
+          top: 0;
+          z-index: 10000;
+          color: black;
+          display: block;
+          font-size: 16px;
+          visibility: visible;
+          text-indent: 0;
+          font-size: 1.4rem;
+          display: inline-block;
+        }
+      }
+    }
+    > .comment {
+      margin-left: 0;
+      display: inline-block;
+      .comment-content {
+        background: transparent;
+        margin-left: 0;
+      }
+    }
   }
-  .comment-actions {
+  .comment .comment-actions {
     display: none;
   }
   .comment-meta {

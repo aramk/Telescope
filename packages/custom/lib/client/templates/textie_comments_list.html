@@ -2,6 +2,20 @@
   {{#each commentsCursor}}
     <div>Post: <a href="{{pathFor route='post_page' _id=postId}}/">{{post.title}}</a></div>
     <ul class="comments comment-list" aria-live="polite">
+      <div class="comment-actions comment-vote upvoted downvoted">
+        {{#if upvotes}}
+          <a class="upvote" href="#">
+            {{{icon "upvote"}}}
+            <span class="value">{{upvotes}}</span>
+          </a>
+        {{/if}}
+        {{#if downvotes}}
+          <a class="downvote" href="#">
+            {{{icon "downvote"}}}
+            <span class="value">{{downvotes}}</span>
+          </a>
+        {{/if}}
+      </div>
       {{> comment_item}}
     </ul>
   {{/each}}

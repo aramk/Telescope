@@ -12,6 +12,11 @@ Template.textie_comments_list.helpers({
   },
   post: function() {
     return Posts.findOne(this.postId);
+  },
+  downvotes: function() {
+    if (this.baseScore < 0) {
+      return this.downvotes;
+    }
   }
 });
 
