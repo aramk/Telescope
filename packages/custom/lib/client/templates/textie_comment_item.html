@@ -24,14 +24,12 @@
             <div class="comment-text-inner">{{{htmlBody}}}</div>
             {{#if showMessageScore}}
               <div class="message-score">
-                {{#if zeroBaseScore}}
-                  0
-                {{else}}
+                {{#unless zeroBaseScore}}
                   {{#unless oneAbsBaseScore}}
                     <span class="count">{{baseScore}}</span>
                   {{/unless}}
                   <i class="thumbs fa fa-thumbs-{{scoreThumbClass}}"></i>
-                {{/if}}
+                {{/unless}}
               </div>
             {{/if}}
           </div>

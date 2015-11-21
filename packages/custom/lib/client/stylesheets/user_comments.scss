@@ -61,6 +61,12 @@
   .comment-meta {
     margin-bottom: 0;
     padding-bottom: 0;
+    .comment-author a, .points, .unit {
+      display: none;
+    }
+    .edit-link {
+      margin: 0 0.5rem;
+    }
   }
   .comment-main {
     cursor: pointer;
