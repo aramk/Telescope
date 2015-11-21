@@ -1,4 +1,4 @@
-TemplateClass = Template.comment_item;
+var TemplateClass = Template.comment_item;
 
 TemplateClass.helpers({
   isTopComment: function() {

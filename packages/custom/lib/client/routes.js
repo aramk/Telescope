@@ -7,7 +7,7 @@ Meteor.startup(function () {
 
   Router.route('/user/replies', {
     name: 'userReplies',
-    template: 'user_replies'
+    template: 'user_comments'
   });
 
   Router.route('/user/posts', {

@@ -17,6 +17,10 @@ Template.textie_comments_list.helpers({
     if (this.baseScore < 0) {
       return this.downvotes;
     }
+  },
+  commentData: function() {
+    this.showMessageScore = true;
+    return this;
   }
 });
 

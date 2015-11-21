@@ -6,7 +6,7 @@
 
 var prefix = 'textie_';
 var templateNames = ['nav', 'user_menu', 'footer', 'user_menu_label', 'user_comments',
-    'user_posts'];
+    'user_posts', 'comment_item'];
 _.each(templateNames, function(name) {
   Template[prefix + name].replaces(name);
 });

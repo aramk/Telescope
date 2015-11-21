@@ -16,7 +16,7 @@
             </a>
           {{/if}}
         </div> -->
-        {{> comment_item}}
+        {{> Template.dynamic template="comment_item" data=commentData}}
     {{/each}}
   </ul>
   {{#if hasMoreComments}}

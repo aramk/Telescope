@@ -1,6 +1,7 @@
-@import 'mixins.scss';
-@import 'elements.scss';
-@import 'nav.scss';
+@import 'mixins';
+@import 'elements';
+@import 'nav';
+@import 'colors';
 
 $small-break: 600px;
 $medium-break: 800px;
@@ -76,11 +77,6 @@ header {
 }
 
 // change thumb size on comments page
-
-$comment-color-upvote: #008000;
-$comment-color-downvote: #DD3416;
-$comment-color-action: #7ac0e4;
-$comment-color-inactive: #b3c1c6;
 
 .comment-actions {
 	@include small {

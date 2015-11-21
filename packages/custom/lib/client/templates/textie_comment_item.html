@@ -1,0 +1,65 @@
+<template name="textie_comment_item">
+  <li class="comment module comment-displayed {{commentClass}}" id="{{_id}}">
+   <div class="comment-body">
+      {{#if isDeleted}}
+        <div class="comment-deleted">This comment has been deleted.</div>
+      {{else}}
+      <div class="comment-content">
+        <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
+          <a class="upvote" href="#">
+            {{{icon "upvote"}}}
+            <span>{{_ "upvote"}}</span>
+          </a>
+          <a class="downvote" href="#">
+            {{{icon "downvote"}}}
+            <span>{{_ "downvote"}}</span>
+          </a>
+        </div>
+        <div class="comment-main">
+          {{#if isTopComment}}
+            <div class="top-comment"></div>
+          {{/if}}
+          <div class="user-avatar avatar-medium" aria-hidden="true" aria-live="off">{{> avatar userId=userId shape="circle"}}</div>
+          <div class="comment-text markdown">
+            <div class="comment-text-inner">{{{htmlBody}}}</div>
+            {{#if showMessageScore}}
+              <div class="message-score">
+                {{#if zeroBaseScore}}
+                  0
+                {{else}}
+                  {{#unless oneAbsBaseScore}}
+                    <span class="count">{{baseScore}}</span>
+                  {{/unless}}
+                  <i class="thumbs fa fa-thumbs-{{scoreThumbClass}}"></i>
+                {{/if}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+        <div class="comment-meta">
+          <div class="comment-author">
+            <a href="{{getProfileUrl userId}}">{{authorName}}</a>
+            <span class="comment-permalink comment-time">{{timeAgoShort ago}}</span>
+          </div>
+          <span class="points">{{points}}</span> <span class="unit">{{pointsUnitDisplayText}}  </span>
+          {{#if canEdit this}}
+            | <a class="edit-link" href="{{pathFor route='comment_edit' _id=_id}}">{{_ "edit"}}</a>
+          {{/if}}
+          {{#if isAdmin}}
+            | <span>{{full_date}}</span>
+          {{/if}}
+        </div>
+      </div>
+      {{/if}}
+      {{#if showChildComments}}
+        <ul class="comment-children comment-list">
+        {{#each childComments}}
+          {{#with this}}
+            {{> comment_item}}
+          {{/with}}
+        {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+  </li>
+</template>

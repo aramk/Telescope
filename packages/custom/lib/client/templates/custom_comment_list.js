@@ -1,4 +1,4 @@
-TemplateClass = Template.comment_list;
+var TemplateClass = Template.comment_list;
 
 TemplateClass.helpers({
   child_comments: function() {

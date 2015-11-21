@@ -1,5 +1,6 @@
 @import './_mixins';
 @import './_layout';
+@import './colors';
 
 .user-profile-comments {
   > .comments {
@@ -60,6 +61,29 @@
   .comment-meta {
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+  .comment-main {
+    cursor: pointer;
+  }
+  .message-score {
+    text-align: right;
+    .count:after {
+      content: 'x';
+      margin-left: 0.26rem;
+    }
+    .thumbs {
+      background: white;
+      height: 2.5rem;
+      width: 2.5rem;
+      text-align: center;
+      border-radius: 50%;
+      &.fa-thumbs-up {
+        color: $comment-color-upvote;
+      }
+      &.fa-thumbs-down {
+        color: $comment-color-downvote;
+      }
+    }
   }
 }
 

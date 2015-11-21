@@ -1,4 +1,6 @@
-Template.user_comments.helpers({
+var TemplateClass = Template.user_comments;
+
+TemplateClass.helpers({
   arguments: function () {
     var user = Meteor.user();
     return {
@@ -14,5 +16,11 @@ Template.user_comments.helpers({
         subscribeToUsers: false
       }
     };
+  }
+});
+
+TemplateClass.events({
+  'click .comment-main': function() {
+    Router.go('/posts/' + this.postId);
   }
 });

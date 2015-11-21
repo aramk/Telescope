@@ -1,6 +1,10 @@
 <template name="textie_user_comments">
   <div class="user-profile-comments grid grid-module">
     <h3>My Replies</h3>
-    {{> commentsListController arguments}}
+    {{#if currentUser}}
+      {{> commentsListController arguments}}
+    {{else}}
+      <p>Please log in to see your replies.</p>
+    {{/if}}
   </div>
 </template>
