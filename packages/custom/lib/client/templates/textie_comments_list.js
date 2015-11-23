@@ -1,5 +1,5 @@
 Template.textie_comments_list.helpers({
-  commentsCursor: function () {
+  comments: function () {
     if (this.commentsCursor) { // not sure why this should ever be undefined, but it can apparently
       var comments = this.commentsCursor.map(function (comment, index) {
         comment.rank = index;

@@ -1,24 +1,28 @@
 <template name="textie_comments_list">
-  <ul class="comments comment-list" aria-live="polite">
-    {{#each commentsCursor}}
-      <!-- <div>Post: <a href="{{pathFor route='post_page' _id=postId}}/">{{post.title}}</a></div> -->
-        <!-- <div class="comment-actions comment-vote upvoted downvoted">
-          {{#if upvotes}}
-            <a class="upvote" href="#">
-              {{{icon "upvote"}}}
-              <span class="value">{{upvotes}}</span>
-            </a>
-          {{/if}}
-          {{#if downvotes}}
-            <a class="downvote" href="#">
-              {{{icon "downvote"}}}
-              <span class="value">{{downvotes}}</span>
-            </a>
-          {{/if}}
-        </div> -->
-        {{> Template.dynamic template="comment_item" data=commentData}}
-    {{/each}}
-  </ul>
+    {{#if comments.length}}
+      <ul class="comments comment-list" aria-live="polite">
+        {{#each comments}}
+          <!-- <div>Post: <a href="{{pathFor route='post_page' _id=postId}}/">{{post.title}}</a></div> -->
+            <!-- <div class="comment-actions comment-vote upvoted downvoted">
+              {{#if upvotes}}
+                <a class="upvote" href="#">
+                  {{{icon "upvote"}}}
+                  <span class="value">{{upvotes}}</span>
+                </a>
+              {{/if}}
+              {{#if downvotes}}
+                <a class="downvote" href="#">
+                  {{{icon "downvote"}}}
+                  <span class="value">{{downvotes}}</span>
+                </a>
+              {{/if}}
+            </div> -->
+            {{> Template.dynamic template="comment_item" data=commentData}}
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="no-posts">Sorry, we couldn't find any replies.</div>
+    {{/if}}
   {{#if hasMoreComments}}
     <a class="more-button grid-module" href="#"><span>{{_ "load_more"}}</span></a>
   {{/if}}
