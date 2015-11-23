@@ -24,13 +24,14 @@ Metrics =
 
     wb = new Workbook()
     _.each results, (metrics, metricId) ->
-      headers = _.keys(_.first(metrics))
-      data = if _.isEmpty(headers) then [] else [headers]
-      _.each metrics, (valueMap) ->
-        data.push _.values(valueMap) unless _.isEmpty(valueMap)
       sheet = new Worksheet()
-      sheet.addData(data)
       wb.addSheet(metricId, sheet)
+      unless _.isEmpty(metrics)
+        headers = _.keys(_.first(metrics))
+        data = if _.isEmpty(headers) then [] else [headers]
+        _.each metrics, (valueMap) ->
+          data.push _.values(valueMap) unless _.isEmpty(valueMap)
+        sheet.addData(data)
     wb
 
 Meteor.methods
