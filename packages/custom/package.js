@@ -74,6 +74,8 @@ Package.onUse(function (api) {
     'lib/client/templates/textie_user_posts.js',
     'lib/client/templates/textie_comment_item.html',
     'lib/client/templates/textie_comment_item.js',
+    'lib/client/templates/textie_postsLoadMore.html',
+    'lib/client/templates/textie_postsLoadMore.js',
     'lib/client/templates/trending_posts.html',
     'lib/client/templates/trending_posts.js',
     // 'lib/client/templates/hello.html',

@@ -21,7 +21,9 @@
         {{/each}}
       </ul>
     {{else}}
-      <div class="no-posts">Sorry, we couldn't find any replies.</div>
+      <div class="no-posts">
+        You have yet to suggest any replies. People need your help. Suggest some replies to <a href="{{pathFor route='postCategories'}}">these</a> messages.
+      </div>
     {{/if}}
   {{#if hasMoreComments}}
     <a class="more-button grid-module" href="#"><span>{{_ "load_more"}}</span></a>
