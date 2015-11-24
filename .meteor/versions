@@ -80,6 +80,8 @@ meteortoys:toykit@0.8.2
 minifiers@1.1.5
 minimongo@1.0.8
 miro:mailchimp@1.0.4
+mizzao:timesync@0.3.3
+mizzao:user-status@0.6.5
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.3
 mongo@1.1.0
@@ -96,6 +98,7 @@ ordered-dict@1.0.3
 package-version-parser@3.0.3
 peppelg:bootstrap-3-modal@1.0.3
 percolatestudio:synced-cron@1.1.0
+pfafman:filesaver@0.2.1
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -151,6 +154,7 @@ telescope:theme-hubble@0.20.4
 telescope:update-prompt@0.20.4
 telescope:users@0.20.4
 templating@1.1.1
+textie:metrics@0.1.0
 tracker@1.0.7
 tsega:bootstrap3-datetimepicker@3.1.3_3
 twbs:bootstrap@3.3.5
