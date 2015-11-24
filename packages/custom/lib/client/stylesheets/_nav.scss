@@ -108,10 +108,9 @@ $header-height: 60px;
     display: none;
   }
   .post-button {
-    padding: 0 1rem;
+    padding: 0.25rem 1rem;
     font-size: 1.5rem;
-    margin-top: -5px;
-    margin-left: 1rme;
+    margin-left: 1rem;
   }
   // Disabled for now.
   .notifications-menu {
@@ -204,6 +203,9 @@ $header-height: 60px;
       .menu-top-level:after {
         display: none;
       }
+    }
+    .post-button {
+      margin-top: -5px;
     }
     .subtitle {
       right: 1rem;

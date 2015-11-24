@@ -16,6 +16,7 @@
       {{#if hasSecondaryNav}}
         <div class="nav secondary-nav header-module">
           {{#if currentUser}}
+            {{> postButton text="Post"}}
             <div class="social-links desktop-only">
               <a class="facebook" href="https://www.facebook.com/TextieHQ" target="_blank"></a>
               <a class="twitter" href="https://twitter.com/textieapp" target="_blank"></a>
@@ -25,9 +26,6 @@
             </div>
           {{/if}}
           {{> modules "secondaryNav"}}
-          <div class="mobile-only inline">
-            {{> postButton text="Post"}}
-          </div>
         </div>
       {{/if}}
     </div>
