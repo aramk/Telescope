@@ -6,7 +6,6 @@ class @VoteMetrics extends DocMetrics
   transform: (doc) ->
     upvotedComments = doc.telescope.upvotedComments
     downvotedComments = doc.telescope.downvotedComments
-    return if _.isEmpty(upvotedComments) or _.isEmpty(downvotedComments)
     votes = []
     addVote = (item, direction) ->
       votes.push
