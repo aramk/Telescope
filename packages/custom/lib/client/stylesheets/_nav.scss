@@ -74,34 +74,35 @@ $header-height: 60px;
     .user-menu-label {
       display: inline-block;
       vertical-align: middle;
+      width: 35px;
+      height: 35px;
+      @include image-background-contain;
+      background-image: url('/MenuButton2.png');
     }
     .user-menu-username, .menu-description {
       display: none;
     }
-    .avatar {
-      width: 30px;
-      height: 30px;
-      .avatar-initials {
-        line-height: 30px;
-      }
-    }
     &.menu-dropdown.menu-has-items .menu-top-level:after {
-      font-size: 25px;
-      color: #9db1c3;
-      top: 3px;
+      display: none;
     }
     .menu-menu {
       top: 20px;
       right: 0;
       left: auto;
     }
-    .user-menu-label {
-      .mobile-only {
-        font-size: 2.5rem;
-        line-height: 0;
-        margin-top: -0.5rem;
-      }
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    .avatar-initials {
+      line-height: 30px;
     }
+  }
+  .avatar-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
   }
   .submit.btn {
     display: none;
@@ -210,6 +211,9 @@ $header-height: 60px;
     .mobile-only.inline {
       margin-left: 1rem;
       display: inline-block !important;
+    }
+    .user-menu-label {
+      margin-top: -4px;
     }
   }
 }

@@ -66,6 +66,7 @@ Package.onUse(function (api) {
     'lib/client/templates/textie_comments_list.js',
     'lib/client/templates/textie_footer.html',
     'lib/client/templates/textie_nav.html',
+    'lib/client/templates/textie_nav.js',
     'lib/client/templates/textie_user_comments.html',
     'lib/client/templates/textie_user_comments.js',
     'lib/client/templates/textie_user_menu.html',
