@@ -9,7 +9,11 @@
         {{#if isUserPosts}}
           You have yet to submit any texts. No probs, when you're ready, have a go at this <a class="submit-message">here</a>.
         {{else}}
-          {{_ "sorry_we_couldnt_find_any_posts"}}
+          {{#if categoriesPage}}
+            A text has yet to be submitted to this category
+          {{else}}
+            {{_ "sorry_we_couldnt_find_any_posts"}}
+          {{/if}}
         {{/if}}
       </div>
     {{/if}}

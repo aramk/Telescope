@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./layout";
 
 a.btn {
   &, &:link, &:visited {
@@ -24,6 +25,8 @@ a.btn {
 }
 
 .post-call-to-action {
+  display: inline-block;
+  width: 100%;
   h3 {
     margin-bottom: 2rem;
   }
@@ -31,5 +34,13 @@ a.btn {
   a {
     text-decoration: underline;
     font-weight: normal;
+  }
+}
+
+@include device-small {
+  .post-call-to-action {
+    h3 {
+      margin-top: 0;
+    }
   }
 }
